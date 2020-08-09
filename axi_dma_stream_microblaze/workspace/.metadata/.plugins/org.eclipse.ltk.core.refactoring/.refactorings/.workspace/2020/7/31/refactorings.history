@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;axis_dma_app_system&apos;" deleteContents="true" description="Delete resource &apos;axis_dma_app_system&apos;" element1="/axis_dma_app_system" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1595778365185"/>
-</session>
