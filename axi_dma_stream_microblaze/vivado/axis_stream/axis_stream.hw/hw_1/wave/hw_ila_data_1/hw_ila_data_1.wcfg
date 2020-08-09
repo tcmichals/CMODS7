@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="9914fs"></ZoomStartTime>
+      <ZoomEndTime time="10466fs"></ZoomEndTime>
+      <Cursor1Time time="10114fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="312"></NameColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="logic" fp_name="axis_dma_96mhz_i/uart_axis_0_debug_1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">axis_dma_96mhz_i/uart_axis_0_debug_1</obj_property>
+      <obj_property name="ObjectShortName">uart_axis_0_debug_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="axis_dma_96mhz_i/uart_axis_0_debug_0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">axis_dma_96mhz_i/uart_axis_0_debug_0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">uart_axis_0_debug_0[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="axis_dma_96mhz_i/uart_axis_0_debug_2">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">axis_dma_96mhz_i/uart_axis_0_debug_2</obj_property>
+      <obj_property name="ObjectShortName">uart_axis_0_debug_2</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="axis_dma_96mhz_i/uart_axis_0_uart_txd">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">axis_dma_96mhz_i/uart_axis_0_uart_txd</obj_property>
+      <obj_property name="ObjectShortName">uart_axis_0_uart_txd</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

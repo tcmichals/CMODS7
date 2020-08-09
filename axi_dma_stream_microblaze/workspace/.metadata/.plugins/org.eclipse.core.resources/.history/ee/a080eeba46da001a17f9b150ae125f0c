@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="dma_axis_app" location="/media/tcmichals/Working/xilinx/CMODS7-25/axistream/workspace/dma_axis_app" platform="/media/tcmichals/Working/xilinx/CMODS7-25/axistream/workspace/axis_freertos_platform/export/axis_freertos_platform/axis_freertos_platform.xpfm" platformUID="xilinx:cmod-s7-25::0.0(custom)" systemProject="dma_axis_app_system" sysConfig="axis_freertos_platform" runtime="C/C++" cpu="freertos10_xilinx_domain" cpuInstance="microblaze_0" os="freertos10_xilinx" language="CPP" mssSignature="76ad3ccea5ed5e9751a395c4df93f6a7">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1658827185" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1080017218">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

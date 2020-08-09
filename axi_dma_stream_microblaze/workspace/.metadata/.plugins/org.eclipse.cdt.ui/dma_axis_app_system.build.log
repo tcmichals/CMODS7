@@ -1,0 +1,6 @@
+11:01:21 **** Incremental Build of configuration Release for project dma_axis_app_system ****
+make all 
+Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
+
+11:01:21 Build Finished (took 517ms)
+

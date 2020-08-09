@@ -1,0 +1,171 @@
+
+/*
+    Read and Write 32 bit memory
+    Copyright (C) 2020  Tim Michals
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+*/
+#pragma once
+
+#include <cstdint>
+#include <atomic>
+#include <array>
+#include <stddef.h>
+#include <string.h>
+#include <stddef.h>
+#include "basicProtocol.h"
+
+#ifdef PC_DEBUG
+#include <boost/format.hpp>
+#include <iostream>
+#include <chrono>
+uint32_t getTime()
+{
+    std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+    return t1.time_since_epoch().count();
+}
+#else
+#include "xtmrctr.h"
+static XTmrCtr gxPingTimerInstance;
+#endif
+
+typedef struct
+{
+    uint32_t m_version; // always 0
+    uint32_t m_timestamInUs;
+    uint32_t m_size;
+    uint8_t m_payload[MAX_PAYLOAD - (3 * sizeof(uint32_t))];
+
+} pingPayload_t;
+
+#define PING_PROTOCOL_PORT 0x2
+#define PING_PLAYLOAD_MAX_SIZE (MAX_PAYLOAD - offsetof(pingPayload_t, m_payload))
+
+class pingProtocolServer
+{
+public:
+    pingProtocolServer(basicProtocol *protocol);
+    virtual ~pingProtocolServer();
+    bool bind(basicProtocol *protocol);
+
+protected:
+    basicProtocol *m_protocol;
+    pingPayload_t m_payload;
+
+    bool postFromBasicProtocol(uint8_t from_port, uint8_t *pPayload, size_t sizeOfPayload);
+};
+
+inline pingProtocolServer::pingProtocolServer(basicProtocol *protocol) : m_protocol(protocol)
+{
+    // Init stuff
+
+//    auto callback = basicProtocol::postPayloadCallback_t::make<&pingProtocolServer::postFromBasicProtocol>(*this);
+ //   m_protocol.registerHandler(PING_PROTOCOL_PORT, callback);
+	bind(protocol);
+}
+
+inline bool pingProtocolServer::bind(basicProtocol *protocol)
+{
+	m_protocol = protocol;
+    auto callback = basicProtocol::postPayloadCallback_t::make<&pingProtocolServer::postFromBasicProtocol>(*this);
+    protocol->registerHandler(PING_PROTOCOL_PORT, callback);
+
+    portBASE_TYPE xStatus = XTmrCtr_Initialize( &gxPingTimerInstance, XPAR_TMRCTR_1_DEVICE_ID );
+    if( xStatus == XST_SUCCESS )
+    {
+    	XTmrCtr_SetResetValue( &gxPingTimerInstance, 0, XPAR_AXI_TIMER_PING_CLOCK_FREQ_HZ /6=96  );
+		XTmrCtr_SetOptions( &gxPingTimerInstance, 0, (  XTC_AUTO_RELOAD_OPTION | XTC_DOWN_COUNT_OPTION ) )
+    	XTmrCtr_Start( &gxPingTimerInstance, 0 );
+    }
+    return true;
+}
+
+inline pingProtocolServer::~pingProtocolServer()
+{
+}
+
+inline bool pingProtocolServer::postFromBasicProtocol(uint8_t from_port, uint8_t *pPayload, size_t sizeOfPayload)
+{
+
+    pingPayload_t *pOperation = reinterpret_cast<pingPayload_t *>(pPayload);
+    pOperation->m_timestamInUs = XTmrCtr_GetValue(&gxPingTimerInstance, 0);
+    return m_protocol->send_packet(from_port, PING_PROTOCOL_PORT, pPayload, sizeOfPayload);
+}
+
+typedef struct
+{
+    uint32_t m_pcTimeOffset; // always 0
+    uint32_t m_index;
+    uint8_t m_payload[PING_PLAYLOAD_MAX_SIZE - (2 * sizeof(uint32_t))];
+
+} pingClientPayload_t;
+
+class pingProtocolClient
+{
+public:
+    pingProtocolClient(basicProtocol &protocol);
+    virtual ~pingProtocolClient();
+
+protected:
+    basicProtocol &m_protocol;
+    pingPayload_t m_payload;
+    uint32_t m_index;
+
+    bool postFromBasicProtocol(uint8_t from_port, uint8_t *pPayload, size_t sizeOfPayload);
+    bool startPing();
+};
+
+inline pingProtocolClient::pingProtocolClient(basicProtocol &protocol) : m_protocol(protocol),
+                                                                         m_index(0)
+{
+    // Init stuff
+    auto callback = basicProtocol::postPayloadCallback_t::make<&pingProtocolClient::postFromBasicProtocol>(*this);
+    m_protocol.registerHandler(PING_PROTOCOL_PORT, callback);
+}
+
+inline pingProtocolClient::~pingProtocolClient()
+{
+}
+
+inline bool pingProtocolClient::postFromBasicProtocol(uint8_t from_port, uint8_t *pPayload, size_t sizeOfPayload)
+{
+    pingPayload_t *pOperation = reinterpret_cast<pingPayload_t *>(pPayload);
+    pOperation->m_timestamInUs = XTmrCtr_GetValue(&gxPingTimerInstance, 0);
+    return m_protocol.send_packet(from_port, PING_PROTOCOL_PORT, pPayload, sizeOfPayload);
+}
+
+inline bool pingProtocolClient::startPing()
+{
+    std::array<uint8_t, PING_PLAYLOAD_MAX_SIZE> payload;
+    pingPayload_t *pPingPayLoad = reinterpret_cast<pingPayload_t *>(payload.data());
+    pingClientPayload_t *pPingClientPayLoad = reinterpret_cast<pingClientPayload_t *>(payload.data() + sizeof(pingPayload_t));
+
+    pPingPayLoad->m_version = 0;
+    pPingPayLoad->m_timestamInUs = 0;
+    pPingPayLoad->m_size = PING_PLAYLOAD_MAX_SIZE;
+
+    m_index = 0;
+    pPingClientPayLoad->m_index = m_index;
+    pPingClientPayLoad->m_pcTimeOffset = XTmrCtr_GetValue(&gxPingTimerInstance, 0);
+
+    for (size_t offset = 0; offset < sizeof(pPingClientPayLoad->m_payload) / 4; offset++)
+    {
+        pPingClientPayLoad->m_payload[offset] = ~offset;
+    }
+
+    return m_protocol.send_packet(PING_PROTOCOL_PORT, PING_PROTOCOL_PORT, payload.data(), payload.size());
+}
+
+//eof

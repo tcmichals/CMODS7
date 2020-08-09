@@ -1,0 +1,6 @@
+2020-08-09T11:01:21.17630100255-11:01:21 **** Incremental Build of configuration Release for project dma_axis_app_system ****
+000-make all 
+000-Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
+00255-
+11:01:21 Build Finished (took 517ms)
+

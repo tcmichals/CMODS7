@@ -1,0 +1,257 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Aug  8 09:13:52 2020
+# Process ID: 13760
+# Current directory: /media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.runs/axis_dma_96mhz_uart_axis_0_0_synth_1
+# Command line: vivado -log axis_dma_96mhz_uart_axis_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axis_dma_96mhz_uart_axis_0_0.tcl
+# Log file: /media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.runs/axis_dma_96mhz_uart_axis_0_0_synth_1/axis_dma_96mhz_uart_axis_0_0.vds
+# Journal file: /media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.runs/axis_dma_96mhz_uart_axis_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source axis_dma_96mhz_uart_axis_0_0.tcl -notrace
+Command: synth_design -top axis_dma_96mhz_uart_axis_0_0 -part xc7s25csga225-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'axis_dma_96mhz_uart_axis_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
+INFO: [Device 21-403] Loading part xc7s25csga225-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13835
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2298.273 ; gain = 180.539 ; free physical = 153 ; free virtual = 3911
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axis_dma_96mhz_uart_axis_0_0' [/media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.srcs/sources_1/bd/axis_dma_96mhz/ip/axis_dma_96mhz_uart_axis_0_0/synth/axis_dma_96mhz_uart_axis_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'uart_axis' [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/axis_uart.v:3]
+	Parameter CLKS_PER_BIT bound to: 8 - type: integer 
+	Parameter PACKET_EOP bound to: 8'b01111111 
+INFO: [Synth 8-6157] synthesizing module 'sync_signal' [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/sync_signal.v:33]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sync_signal' (1#1) [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/sync_signal.v:33]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/uart_rx.v:22]
+	Parameter CLKS_PER_BIT bound to: 8 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter RX_START_BIT bound to: 3'b001 
+	Parameter RX_DATA_BITS bound to: 3'b010 
+	Parameter RX_STOP_BIT bound to: 3'b011 
+	Parameter CLEANUP bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (2#1) [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/uart_rx.v:22]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/uart_tx.v:14]
+	Parameter CLKS_PER_BIT bound to: 8 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter TX_START_BIT bound to: 3'b001 
+	Parameter TX_DATA_BITS bound to: 3'b010 
+	Parameter TX_STOP_BIT bound to: 3'b011 
+	Parameter CLEANUP bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (3#1) [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/uart_tx.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'uart_axis' (4#1) [/media/tcmichals/Working/cyclone-10/cyc1000/fusesoc.projects/cores/quad-serv-riscv/rtl/uart/rtl/axis_uart.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'axis_dma_96mhz_uart_axis_0_0' (5#1) [/media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.srcs/sources_1/bd/axis_dma_96mhz/ip/axis_dma_96mhz_uart_axis_0_0/synth/axis_dma_96mhz_uart_axis_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2343.180 ; gain = 225.445 ; free physical = 1595 ; free virtual = 5522
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 2358.023 ; gain = 240.289 ; free physical = 1964 ; free virtual = 5881
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 2358.023 ; gain = 240.289 ; free physical = 1964 ; free virtual = 5881
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2358.023 ; gain = 0.000 ; free physical = 1954 ; free virtual = 5851
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2515.805 ; gain = 0.000 ; free physical = 1681 ; free virtual = 5605
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2515.805 ; gain = 0.000 ; free physical = 1670 ; free virtual = 5595
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1775 ; free virtual = 5741
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s25csga225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1784 ; free virtual = 5750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1792 ; free virtual = 5758
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'r_SM_Main_reg' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+            TX_START_BIT |                              001 |                              001
+            TX_DATA_BITS |                              010 |                              010
+             TX_STOP_BIT |                              011 |                              011
+                 CLEANUP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_SM_Main_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1802 ; free virtual = 5774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    3 Bit       Adders := 4     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 4     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 2     
+	   6 Input    8 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 10    
+	   5 Input    3 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 90 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1763 ; free virtual = 5772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1428 ; free virtual = 5463
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1432 ; free virtual = 5466
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1418 ; free virtual = 5469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1340 ; free virtual = 5395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1340 ; free virtual = 5394
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1339 ; free virtual = 5393
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1338 ; free virtual = 5393
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1340 ; free virtual = 5395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1340 ; free virtual = 5395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     7|
+|3     |LUT3 |     7|
+|4     |LUT4 |     5|
+|5     |LUT5 |     6|
+|6     |LUT6 |    32|
+|7     |FDRE |    40|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1340 ; free virtual = 5395
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 2515.805 ; gain = 240.289 ; free physical = 1375 ; free virtual = 5428
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 2515.805 ; gain = 398.070 ; free physical = 1375 ; free virtual = 5428
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2515.805 ; gain = 0.000 ; free physical = 1588 ; free virtual = 5643
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2515.805 ; gain = 0.000 ; free physical = 1705 ; free virtual = 5769
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2515.805 ; gain = 398.219 ; free physical = 1832 ; free virtual = 5897
+INFO: [Common 17-1381] The checkpoint '/media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.runs/axis_dma_96mhz_uart_axis_0_0_synth_1/axis_dma_96mhz_uart_axis_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
+INFO: [Common 17-1381] The checkpoint '/media/tcmichals/Working/xilinx/CMODS7-25/axistream/vivado/axis_stream/axis_stream.runs/axis_dma_96mhz_uart_axis_0_0_synth_1/axis_dma_96mhz_uart_axis_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file axis_dma_96mhz_uart_axis_0_0_utilization_synth.rpt -pb axis_dma_96mhz_uart_axis_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Aug  8 09:14:41 2020...
