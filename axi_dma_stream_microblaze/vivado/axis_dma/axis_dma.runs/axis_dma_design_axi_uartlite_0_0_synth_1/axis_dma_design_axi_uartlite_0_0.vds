@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Aug 14 22:48:52 2020
+# Process ID: 10933
+# Current directory: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.runs/axis_dma_design_axi_uartlite_0_0_synth_1
+# Command line: vivado -log axis_dma_design_axi_uartlite_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axis_dma_design_axi_uartlite_0_0.tcl
+# Log file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.runs/axis_dma_design_axi_uartlite_0_0_synth_1/axis_dma_design_axi_uartlite_0_0.vds
+# Journal file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.runs/axis_dma_design_axi_uartlite_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source axis_dma_design_axi_uartlite_0_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP axis_dma_design_axi_uartlite_0_0, cache-ID = 3c0a43a311fd8cb0.
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 14 22:49:14 2020...

@@ -1,0 +1,106 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.964584",
+   "Default View_TopLeft":"1949,783",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x -220 -y 190 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x -220 -y 110 -defaultsOSRD
+preplace port pio1 -pg 1 -lvl 10 -x 3070 -y 930 -defaultsOSRD -right
+preplace port pio2 -pg 1 -lvl 10 -x 3070 -y 950 -defaultsOSRD
+preplace port uart_rx -pg 1 -lvl 10 -x 3070 -y 1230 -defaultsOSRD -right
+preplace port uart_tx -pg 1 -lvl 10 -x 3070 -y 1140 -defaultsOSRD
+preplace port ja_0 -pg 1 -lvl 10 -x 3070 -y 260 -defaultsOSRD -right
+preplace port ja_1 -pg 1 -lvl 10 -x 3070 -y 280 -defaultsOSRD -right
+preplace port ja_2 -pg 1 -lvl 10 -x 3070 -y 300 -defaultsOSRD -right
+preplace port ja_3 -pg 1 -lvl 10 -x 3070 -y 320 -defaultsOSRD -right
+preplace port ja_4 -pg 1 -lvl 10 -x 3070 -y 340 -defaultsOSRD -right
+preplace port ja_5 -pg 1 -lvl 10 -x 3070 -y 360 -defaultsOSRD -right
+preplace port pio6 -pg 1 -lvl 10 -x 3070 -y 750 -defaultsOSRD
+preplace port pio7 -pg 1 -lvl 10 -x 3070 -y 770 -defaultsOSRD
+preplace port pio8 -pg 1 -lvl 10 -x 3070 -y 790 -defaultsOSRD
+preplace port pio9 -pg 1 -lvl 10 -x 3070 -y 810 -defaultsOSRD
+preplace port pio3 -pg 1 -lvl 10 -x 3070 -y 1060 -defaultsOSRD
+preplace portBus led -pg 1 -lvl 10 -x 3070 -y 1310 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x -100 -y 180 -defaultsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 4 -x 1010 -y 230 -defaultsOSRD
+preplace inst microblaze_0_axi_periph -pg 1 -lvl 5 -x 1650 -y 680 -defaultsOSRD
+preplace inst microblaze_0_axi_intc -pg 1 -lvl 3 -x 590 -y 290 -defaultsOSRD
+preplace inst microblaze_0_xlconcat -pg 1 -lvl 2 -x 230 -y 320 -defaultsOSRD
+preplace inst mdm_1 -pg 1 -lvl 3 -x 590 -y 110 -defaultsOSRD
+preplace inst rst_clk_wiz_0_120M -pg 1 -lvl 2 -x 230 -y 130 -defaultsOSRD
+preplace inst axi_uartlite_FreeRTOS -pg 1 -lvl 6 -x 2080 -y 940 -defaultsOSRD
+preplace inst axi_timer_FreeRTOS -pg 1 -lvl 6 -x 2080 -y 460 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 6 -x 2080 -y 630 -defaultsOSRD
+preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 7 -x 2390 -y 630 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1010 -y 470 -defaultsOSRD
+preplace inst uart_axis_0 -pg 1 -lvl 6 -x 2080 -y 1130 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 3 -x 590 -y 510 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 6 -x 2080 -y 1300 -defaultsOSRD
+preplace inst microblaze_0_local_memory -pg 1 -lvl 5 -x 1650 -y 240 -defaultsOSRD
+preplace inst pwm_capture_0 -pg 1 -lvl 6 -x 2080 -y 160 -defaultsOSRD
+preplace inst dshot_axi_0 -pg 1 -lvl 6 -x 2080 -y 780 -defaultsOSRD
+preplace inst simple_mux_0 -pg 1 -lvl 9 -x 2900 -y 1070 -defaultsOSRD
+preplace inst simple_mux_1 -pg 1 -lvl 8 -x 2650 -y 1160 -defaultsOSRD
+preplace netloc sys_clock_1 1 0 1 NJ 190
+preplace netloc reset_1 1 0 2 -200 110 NJ
+preplace netloc microblaze_0_intr 1 2 1 410 300n
+preplace netloc microblaze_0_Clk 1 1 5 0 230 420 430 750 320 1310 320 1860
+preplace netloc clk_wiz_0_locked 1 1 1 10 170n
+preplace netloc rst_clk_wiz_0_120M_mb_reset 1 2 2 440 400 730J
+preplace netloc rst_clk_wiz_0_120M_peripheral_aresetn 1 2 4 430 590 740 600 1280 150 1870
+preplace netloc mdm_1_debug_sys_rst 1 1 3 40 30 NJ 30 720
+preplace netloc rx_0_1 1 6 4 NJ 930 NJ 930 N 930 N
+preplace netloc axi_uartlite_0_tx 1 6 4 NJ 950 NJ 950 N 950 N
+preplace netloc axi_uartlite_FreeRTOS_interrupt 1 1 6 30 20 NJ 20 NJ 20 NJ 20 NJ 20 2230
+preplace netloc axi_timer_FreeRTOS_interrupt 1 1 6 20 10 NJ 10 NJ 10 NJ 10 NJ 10 2240
+preplace netloc axi_gpio_0_gpio_io_o 1 6 4 NJ 1310 NJ 1310 N 1310 N
+preplace netloc axi_dma_0_mm2s_introut 1 1 4 30 410 NJ 410 740J 330 1260
+preplace netloc axi_dma_0_s2mm_introut 1 1 4 40 420 NJ 420 760J 340 1250
+preplace netloc i_pwm_0_0_1 1 5 5 1880 300 NJ 300 NJ 300 N 300 3020
+preplace netloc rst_clk_wiz_0_120M_bus_struct_reset 1 2 3 420 40 NJ 40 1320J
+preplace netloc i_pwm_1_0_1 1 5 5 1890 310 NJ 310 NJ 310 N 310 3030
+preplace netloc i_pwm_2_0_1 1 5 5 1900 320 NJ 320 NJ 320 N 320 3040
+preplace netloc i_pwm_3_0_1 1 5 5 1910 330 NJ 330 NJ 330 N 330 3050
+preplace netloc i_pwm_4_0_1 1 5 5 1920 340 NJ 340 NJ 340 N 340 N
+preplace netloc i_pwm_5_0_1 1 5 5 1930 350 NJ 350 NJ 350 N 350 3030
+preplace netloc dshot_axi_0_o_dshot_0 1 6 4 NJ 750 NJ 750 N 750 N
+preplace netloc dshot_axi_0_o_dshot_1 1 6 4 NJ 770 NJ 770 N 770 N
+preplace netloc dshot_axi_0_o_dshot_2 1 6 4 NJ 790 NJ 790 N 790 N
+preplace netloc dshot_axi_0_o_dshot_3 1 6 4 NJ 810 NJ 810 N 810 N
+preplace netloc uart_axis_0_uart_txd 1 6 3 2260 1070 NJ 1070 N
+preplace netloc simple_mux_0_o_output_1 1 9 1 3040 1080n
+preplace netloc simple_mux_0_o_output_0 1 9 1 N 1060
+preplace netloc microblaze_0_axi_periph_M06_AXI 1 5 1 1820 80n
+preplace netloc microblaze_0_ilmb_1 1 4 1 N 230
+preplace netloc microblaze_0_axi_periph_M04_AXI 1 3 3 770 130 NJ 130 1810
+preplace netloc microblaze_0_axi_periph_M01_AXI 1 5 1 1840 630n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 6 1 N 620
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 6 1 N 640
+preplace netloc microblaze_0_axi_periph_M03_AXI 1 5 1 1900 610n
+preplace netloc microblaze_0_intc_axi 1 2 4 460 180 720J 140 NJ 140 1800
+preplace netloc microblaze_0_interrupt 1 3 1 720 200n
+preplace netloc microblaze_0_axi_dp 1 4 1 1290 250n
+preplace netloc microblaze_0_axi_periph_M02_AXI 1 5 1 1830 410n
+preplace netloc axi_dma_0_M_AXI_S2MM 1 4 1 1320 430n
+preplace netloc axi_dma_0_M_AXI_MM2S 1 4 1 1290 410n
+preplace netloc microblaze_0_axi_periph_M05_AXI 1 5 1 1800 710n
+preplace netloc microblaze_0_axi_periph_M07_AXI 1 5 1 1810 750n
+preplace netloc axis_data_fifo_0_M_AXIS 1 3 1 770 430n
+preplace netloc microblaze_0_dlmb_1 1 4 1 N 210
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 4 2 1300 330 1850J
+preplace netloc microblaze_0_debug 1 3 1 730 100n
+preplace netloc axi_dma_0_M_AXI_SG 1 4 1 1270 400n
+preplace netloc uart_axis_0_m_axis 1 2 5 450 0 NJ 0 NJ 0 NJ 0 2250
+levelinfo -pg 1 -220 -100 230 590 1010 1650 2080 2390 2650 2900 3070
+pagesize -pg 1 -db -bbox -sgen -340 -190 3180 1500
+"
+}
+{
+   "da_axi4_cnt":"10",
+   "da_board_cnt":"3",
+   "da_bram_cntlr_cnt":"2",
+   "da_clkrst_cnt":"2",
+   "da_mb_cnt":"1"
+}

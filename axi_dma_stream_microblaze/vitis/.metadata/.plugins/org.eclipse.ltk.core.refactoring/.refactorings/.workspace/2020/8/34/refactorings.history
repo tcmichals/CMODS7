@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;axisDMAPlatform_FreeRTOS&apos;" deleteContents="true" description="Delete resource &apos;axisDMAPlatform_FreeRTOS&apos;" element1="/axisDMAPlatform_FreeRTOS" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1598108669838"/>&#x0A;<refactoring comment="Delete resource &apos;simple_system&apos;" deleteContents="true" description="Delete resource &apos;simple_system&apos;" element1="/simple_system" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1598125548984"/>
+</session>
