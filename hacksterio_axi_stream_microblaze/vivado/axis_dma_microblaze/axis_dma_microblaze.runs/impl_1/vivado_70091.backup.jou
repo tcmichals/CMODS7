@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Aug 14 12:53:03 2020
+# Process ID: 70091
+# Current directory: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/hacksterio_axi_stream_microblaze/vivado/axis_dma_microblaze/axis_dma_microblaze.runs/impl_1
+# Command line: vivado -log uart_axis.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uart_axis.tcl -notrace
+# Log file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/hacksterio_axi_stream_microblaze/vivado/axis_dma_microblaze/axis_dma_microblaze.runs/impl_1/uart_axis.vdi
+# Journal file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/hacksterio_axi_stream_microblaze/vivado/axis_dma_microblaze/axis_dma_microblaze.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source uart_axis.tcl -notrace
