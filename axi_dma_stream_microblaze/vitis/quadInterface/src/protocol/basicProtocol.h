@@ -63,10 +63,7 @@ class basicProtocol
 {
 public:
 	typedef std::array<uint8_t, MAX_PACKET_LEN> pkt_t;
-	typedef delegate<bool(uint8_t from_port,
-						  uint8_t *pPayload,
-						  size_t sizeOfPayLoad)>
-		postPayloadCallback_t;
+	typedef delegate<bool(uint8_t from_port,  uint8_t *pPayload, size_t sizeOfPayLoad)>	postPayloadCallback_t;
 
 	typedef enum
 	{
@@ -77,7 +74,19 @@ public:
 	}PktState_t;
 
 	typedef delegate<bool(uint8_t *pPkt, size_t len, PktState_t state)> txPacket_t;
+	typedef delegate<uint8_t * (size_t len, int &errNo)> allocTXPacket_t;
+	#define TX_MASK 0x0F
+	#define RX_MASK 0xF0
+	typedef enum : uint32_t
+	{
+		CRC_ESC_OFFLOAD_TX_FIFO =(1 << 0),
+		CRC_ESC_OFFLOAD_TX_DMA = (1 << 1),
 
+		CRC_ESC_OFFLOAD_RX_FIFO = (1 << 4),
+		CRC_ESC_OFFLOAD_RX_DMA  = (1 << 5), 
+	
+		NO_OFFLOAD = 0xFFFF,
+	}Offload_t;
 
 protected:
 	enum class rxState_t
@@ -96,6 +105,7 @@ protected:
 	postPayloadCallback_t m_postPayLoadCallback;
 	txPacket_t m_txFunc;
 
+	allocTXPacket_t m_txAllocDMA_Pkt;
 	class payloadCBArgs
 	{
 	public:
@@ -107,14 +117,18 @@ protected:
 	};
 
 	std::array<payloadCBArgs, MAX_PORTS> m_callbackList;
+	Offload_t m_offLoadMethod; 
 
 protected:
 	uint8_t xor_byte(uint8_t packet_byte);
 	bool isValidPacket(uint8_t port);
 	bool postPacket();
+	bool sendPacket_No_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload);
+	bool sendPacket_DMA_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload);
+	bool sendPacket_FIFO_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload);
 
 public:
-	basicProtocol();
+	basicProtocol(Offload_t offload = Offload_t::NO_OFFLOAD);
 	virtual ~basicProtocol();
 	bool registerHandler(uint8_t to_port, postPayloadCallback_t callback);
 	bool isValidPort(uint8_t port);
@@ -124,13 +138,14 @@ public:
 					 size_t lenOfPayload);
 	bool registerTx(const txPacket_t &tx);
 	bool onRecv(uint8_t *pRx, size_t lenOfBytes);
+	bool attachDMAAllocate(const allocTXPacket_t &alloc);
 };
 
 /**
 	 * @brief Construct a new basic Protocol object
 	 * 
 	 */
-inline basicProtocol::basicProtocol() : m_rxState(rxState_t::WAIT_SOP)
+inline basicProtocol::basicProtocol(Offload_t offload): m_rxState(rxState_t::WAIT_SOP),  m_offLoadMethod(offload)
 {
 	crcInit();
 }
@@ -244,6 +259,7 @@ inline bool basicProtocol::isValidPort(uint8_t port)
 		return false;
 	}
 }
+
 /**
  * @brief 
  * 
@@ -254,22 +270,9 @@ inline bool basicProtocol::isValidPort(uint8_t port)
  * @return true 
  * @return false 
  */
-inline bool basicProtocol::send_packet(uint8_t to_port,
-									   uint8_t from_port,
-									   uint8_t *pPayload,
-									   size_t lenOfPayload)
+bool basicProtocol::sendPacket_No_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload)
 {
-
 	size_t packet_offset = 0;
-
-	if (!isValidPort(to_port))
-		return false;
-
-	if (!isValidPort(from_port))
-		return false;
-
-	if (lenOfPayload > MAX_PAYLOAD)
-		return false;
 
 	m_txPkt[packet_offset++] = from_port;
 	m_txPkt[packet_offset++] = to_port;
@@ -279,10 +282,12 @@ inline bool basicProtocol::send_packet(uint8_t to_port,
 	if (m_txPkt.size() < (packet_offset + lenOfPayload))
 		return false;
 
+	//debug(true);
 	for (size_t offset = lenOfPayload; offset; offset--)
 	{
 		m_txPkt[packet_offset++] = *pPayload++;
 	}
+	//debug(false);
 
 	uint16_t crc = crcFast(m_txPkt.data(), packet_offset);
 
@@ -297,8 +302,7 @@ inline bool basicProtocol::send_packet(uint8_t to_port,
 	uint8_t txByte = PACKET_SOP;
 	m_txFunc(&txByte, sizeof(txByte), START_OF_PKT);
 		
- 
-	for (size_t index = 0; index < packet_offset; ++index)
+ 	for (size_t index = 0; index < packet_offset; ++index)
 	{
 		switch (m_txPkt[index])
 		{
@@ -321,6 +325,131 @@ inline bool basicProtocol::send_packet(uint8_t to_port,
 	m_txFunc(&txByte, sizeof(txByte), END_OF_PKT);
 	 
 	return true;
+}
+
+
+/**
+ * @brief 
+ * 
+ * @param to_port 
+ * @param from_port 
+ * @param payload 
+ * @param lenOfPayload 
+ * @return true 
+ * @return false 
+ */
+bool basicProtocol::sendPacket_DMA_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload)
+{
+
+	if ( !m_txAllocDMA_Pkt)
+	{
+		return false;
+	}
+
+	int errNo = 0;
+	size_t packet_offset = 0;
+	uint8_t *pTxPkt = m_txAllocDMA_Pkt(lenOfPayload + 4, errNo);
+
+	if (pTxPkt == nullptr || errNo)
+	{
+		return false;
+	}
+
+	pTxPkt[packet_offset++] = from_port;
+	pTxPkt[packet_offset++] = to_port;
+	pTxPkt[packet_offset++] = lenOfPayload;
+	pTxPkt[packet_offset++] = 0;
+
+	//debug(true);
+	for (size_t offset = lenOfPayload; offset; offset--)
+	{
+		pTxPkt[packet_offset++] = *pPayload++;
+	}
+
+	m_txFunc(pTxPkt, packet_offset,  END_OF_PKT);
+ 
+	return true;
+}
+
+/**
+ * @brief 
+ * 
+ * @param to_port 
+ * @param from_port 
+ * @param payload 
+ * @param lenOfPayload 
+ * @return true 
+ * @return false 
+ */
+bool basicProtocol::sendPacket_FIFO_OffLoad(uint8_t to_port, uint8_t from_port,  uint8_t *pPayload, size_t lenOfPayload)
+{
+	if ( 0 == lenOfPayload)
+	{
+		return false;
+	}
+
+	uint8_t byteToSend = static_cast<uint8_t>(lenOfPayload);;
+	m_txFunc( &from_port, 1, START_OF_PKT);
+	m_txFunc( &to_port, 1, DATA_PKT);
+	m_txFunc( &byteToSend, 1, DATA_PKT);
+	//reseerved field
+	byteToSend = 0;
+	m_txFunc( &byteToSend, 1, DATA_PKT);
+
+	//debug(true);
+	if (lenOfPayload > 1)
+	{
+		//subtract 1 byte 
+		for ( --lenOfPayload; lenOfPayload; lenOfPayload--, pPayload++)
+		{
+			m_txFunc(pPayload, 1,DATA_PKT);
+		}
+	}
+	//send last byte 
+	m_txFunc(pPayload, 1, END_OF_PKT);
+	return true;
+}
+
+/**
+ * @brief 
+ * 
+ * @param to_port 
+ * @param from_port 
+ * @param payload 
+ * @param lenOfPayload 
+ * @return true 
+ * @return false 
+ */
+inline bool basicProtocol::send_packet(uint8_t to_port,  uint8_t from_port,	uint8_t *pPayload, size_t lenOfPayload)
+{
+	
+	bool rc = false;
+
+	if (!isValidPort(to_port))
+		return false;
+
+	if (!isValidPort(from_port))
+		return false;
+
+	if (lenOfPayload > MAX_PAYLOAD)
+		return false;
+
+	switch (m_offLoadMethod & TX_MASK)
+	{	
+		case CRC_ESC_OFFLOAD_TX_DMA:
+			rc = sendPacket_DMA_OffLoad(to_port, from_port, pPayload, lenOfPayload);
+		break;
+
+		case CRC_ESC_OFFLOAD_TX_FIFO:
+			rc = sendPacket_FIFO_OffLoad(to_port, from_port, pPayload, lenOfPayload);
+		break;
+
+		default:
+			rc = sendPacket_No_OffLoad(to_port, from_port, pPayload, lenOfPayload);
+		break;
+	}
+
+	return rc;
 }
 /**
 * @brief 
@@ -392,5 +521,12 @@ inline bool basicProtocol::onRecv(uint8_t *pRx, size_t lenOfBytes)
 	} while (lenOfBytes);
 
 	return rc;
+}
+
+
+bool basicProtocol::attachDMAAllocate(const allocTXPacket_t &callback)
+{
+	this->m_txAllocDMA_Pkt = callback;
+	return true;
 }
 //eof

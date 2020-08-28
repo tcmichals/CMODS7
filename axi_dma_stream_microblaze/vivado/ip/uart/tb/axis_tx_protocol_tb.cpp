@@ -5,6 +5,9 @@
 #include <memory>
 #include <deque>
 #include <vector>
+#include <memory>
+#include <algorithm>
+#include <deque>
 
 #include "verilated_vcd_c.h"
 #include "Vaxis_tx_protocol_tb.h"
@@ -12,68 +15,86 @@
 #include "basicProtocol.h"
 #include "pingProtocol.h"
 
-basicProtocol gProtocol;
+basicProtocol gProtocol(basicProtocol::CRC_ESC_OFFLOAD_TX_DMA);
 pingProtocolClient gPingClient(gProtocol);
 
-/*
-0 1 2 3 4 5 6 7 8 9 
-CRC=0xC241
-  */
+std::deque<uint8_t> gTxArray;
+std::array<uint8_t, 768> gTxBuffer;
+std::size_t gTxSize;
 
-#define CRC_CHECK_LENGTH 10
-std::array<uint8_t, CRC_CHECK_LENGTH> inData;
-std::vector<uint8_t> outData;
-
-void initArray()
+bool sendTxPkt(uint8_t *pPkt, size_t len, basicProtocol::PktState_t state)
 {
-  crcInit();
-  for (size_t index = 0; index < inData.size(); ++index)
-  {
-    inData[index] = (uint8_t)index;
-  }
-  //uint16_t CRC = crcFast(data.data(), data.size());
-  //printf("CRC=0x%X\n", CRC);
+  std::cout << __PRETTY_FUNCTION__ << " line:" << __LINE__ << " len:" << len << std::endl;
+  std::copy(pPkt, pPkt + len, std::back_inserter(gTxArray));
+  gTxSize = gTxArray.size();
+  std::cout << __PRETTY_FUNCTION__ << " line:" << __LINE__ << " len:" << len << std::endl;
+  printf("last byte: 0x%02X\n", gTxArray[gTxArray.size()-1]);
+  return true;
 }
+
+uint8_t *allocDMAPkt(size_t lenOfPkt, int &errCode)
+{
+   std::cout << __PRETTY_FUNCTION__ << " line:" << __LINE__ << std::endl;
+  return gTxBuffer.data();
+}
+
+void setupProtocol()
+{
+	  basicProtocol::txPacket_t del;
+	  del.set(sendTxPkt);
+	  gProtocol.registerTx(del);
+
+    basicProtocol::allocTXPacket_t txAllocDel;
+	  txAllocDel.set(allocDMAPkt);
+	  gProtocol.attachDMAAllocate(txAllocDel);
+    gPingClient.startPing();
+}
+
 
 int main(int argc, char **argv, char **env)
 {
 
   Verilated::commandArgs(argc, argv);
-  Vaxis_tx_protocol_tb *top = new Vaxis_tx_protocol_tb();
-  VerilatedVcdC *tfp = 0;
+  std::unique_ptr<Vaxis_tx_protocol_tb> top = std::make_unique<Vaxis_tx_protocol_tb>();
+  std::unique_ptr<VerilatedVcdC> tfp = std::make_unique<VerilatedVcdC>();
   // Generate a trace
   Verilated::traceEverOn(true);
-  tfp = new VerilatedVcdC;
-  top->trace(tfp, 99);
+
+  top->trace(tfp.get(), 99);
   tfp->open("axis_tx_protocol_tb.vcd");
   bool done = false;
 
   vluint64_t main_time = 0; // Current simulation time
-  initArray();
-  size_t index = 0;
+  setupProtocol();
+
   while (!(done || Verilated::gotFinish()))
   {
     top->axis_reset = !(main_time < 100);
     top->eval();
     tfp->dump(main_time);
 
-    //axi uses neg reset....
-    if (top->axis_aclk)
+    if (!top->axis_reset)
     {
-      if (top->axis_reset && index < inData.size())
+        top->s_axis_tvalid = 0;
+        top->s_axis_tlast = 0;
+        top->m_axis_tready = 1;
+    }
+    //axi uses neg reset....
+    if (top->axis_aclk && top->axis_reset )
+    {
+      if (gTxArray.size())
       {
         if (top->s_axis_tready)
         {
-          uint8_t _value = inData[index++];
-          ;
-          top->s_axis_tdata = _value;
+          uint8_t byte_data =  gTxArray[0];
+          top->s_axis_tdata = byte_data;
           top->s_axis_tvalid = 1;
-          std::cout << __LINE__ << " value:" << ((int)_value) << std::endl;
+          gTxArray.pop_front();
 
-          if (index == inData.size())
+          if (0 == gTxArray.size())
           {
             top->s_axis_tlast = 1;
-            std::cout << "TLAST" << std::endl;
+            printf("TLAST 0x%02X\n", byte_data);
           }
         }
         else
@@ -83,44 +104,34 @@ int main(int argc, char **argv, char **env)
 
         if (top->m_axis_tvalid)
         {
-          outData.push_back(top->m_axis_tdata);
-          std::cout << "index " << index << std::endl;
+          uint8_t data_byte = top->m_axis_tdata;
+          printf("%d 0x%02X \n", __LINE__, (int)data_byte); 
+          gProtocol.onRecv(&data_byte, 1);
         }
       }
-      else if (!top->axis_reset)
+      else if (0 == gTxArray.size())
       {
         top->s_axis_tvalid = 0;
         top->s_axis_tlast = 0;
-        top->m_axis_tready = 1;
-      }
-      else if (index == inData.size())
-      {
-        top->s_axis_tvalid = 0;
-        top->s_axis_tlast = 0;
-        ;
-        std::cout << "rx:" << outData.size() << std::endl;
-        for (auto &value : outData)
-          printf("0x%02X ", (int)value);
-        std::cout << std::endl;
 
         if (top->m_axis_tvalid)
         {
-          outData.push_back(top->m_axis_tdata);
-          std::cout << "index " << index << std::endl;
+          uint8_t data_byte = top->m_axis_tdata;
+          printf("%d 0x%02X \n", __LINE__, (int)data_byte); 
+          gProtocol.onRecv(&data_byte, 1);
         }
         //break;
       }
     }
 
-    if (main_time > 250)
+    if (main_time > 5000)
       break;
 
     top->axis_aclk = !top->axis_aclk;
     main_time += 1;
   }
   tfp->close();
-  delete tfp;
-  delete top;
+
 }
 
 //eof

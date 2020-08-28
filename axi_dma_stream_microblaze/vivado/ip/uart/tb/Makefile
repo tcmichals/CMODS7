@@ -17,8 +17,8 @@ obj_dir/Vaxis_tx_protocol__ALL.a: obj_dir/Vaxis_tx_protocol.cpp
 	make --no-print-directory -C obj_dir -f Vaxis_tx_protocol_tb.mk
 
 axis_tx_protocol_tb: axis_tx_protocol_tb.cpp obj_dir/Vaxis_tx_protocol__ALL.a
-	g++ --std=c++2a -I$(VINC) -I obj_dir    -I../../../sw/protocol -I../../../sw/delegate/include/delegate -DPC_DEBUG \
-		$(VINC)/verilated.cpp      ../../../sw/protocol/crc.c \
+	g++ -DPC_DEBUG -ggdb --std=c++2a -I$(VINC) -I obj_dir    -I../../../../vitis/quadInterface/src/protocol/ -I../../../../vitis/quadInterface/src//delegate/include/delegate -DPC_DEBUG \
+		$(VINC)/verilated.cpp      ../../../../vitis/quadInterface/src/protocol/crc.c \
 		$(VINC)/verilated_vcd_c.cpp \
 		axis_tx_protocol_tb.cpp obj_dir/Vaxis_tx_protocol_tb__ALL.a                \
 		-o axis_tx_protocol_tb
