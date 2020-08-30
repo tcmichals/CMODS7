@@ -11,6 +11,7 @@ BEGIN OS
  PARAMETER SYSTMR_SPEC = true
  PARAMETER stdin = axi_uartlite_FreeRTOS
  PARAMETER stdout = axi_uartlite_FreeRTOS
+ PARAMETER total_heap_size = 11024
 END
 
 

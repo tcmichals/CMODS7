@@ -1,6 +1,0 @@
-23:34:03 **** Incremental Build of configuration Debug for project axisDMA_App_FreeRTOS_system ****
-make all 
-Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
-
-23:34:03 Build Finished (took 564ms)
-

@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/crc_ccitt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module crc_ccitt
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/tb/axis_protocol_crc_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_tx_protocol_crc
+INFO: [VRFC 10-311] analyzing module axis_protocol_crc_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

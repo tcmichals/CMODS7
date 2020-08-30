@@ -143,23 +143,14 @@ int main(int argc, char **argv)
         gPingClient.startPing();
         if (--loopCnt == 0)
         {
-                ledClient.send(boardLEDOperation::TOGGLE_, 0xf);
-                 loopCnt = LOOP_COUNT;
+            ledClient.send(boardLEDOperation::TOGGLE_, 0xf);
+            loopCnt = LOOP_COUNT;
         }
-	//std::this_thread::sleep_for(std::chrono::milliseconds(100));
-	
-
-             m_tc_read = ftdi_readsome_data_submit(m_ftdi.get(), m_rxBuffer.data(), m_rxBuffer.size());
-            int bytes_read = ftdi_transfer_data_done(m_tc_read);
+        m_tc_read = ftdi_readsome_data_submit(m_ftdi.get(), m_rxBuffer.data(), m_rxBuffer.size());
+        int bytes_read = ftdi_transfer_data_done(m_tc_read);
             
-            gProtocol.onRecv(m_rxBuffer.data(), bytes_read);
-    
-  
-
- 
-
-    }
-
+         gProtocol.onRecv(m_rxBuffer.data(), bytes_read);
+     }
 }
 
 //eof

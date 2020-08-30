@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# dshot_axi, pwm_capture, simple_mux, simple_mux, uart_axis
+# axis_tx_esc_protocol, axis_tx_protocol_crc, dshot_axi, pwm_capture, simple_mux, simple_mux, uart_axis
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -314,6 +314,28 @@ proc create_root_design { parentCell } {
    CONFIG.FIFO_MODE {2} \
  ] $axis_data_fifo_0
 
+  # Create instance: axis_tx_esc_protocol_0, and set properties
+  set block_name axis_tx_esc_protocol
+  set block_cell_name axis_tx_esc_protocol_0
+  if { [catch {set axis_tx_esc_protocol_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $axis_tx_esc_protocol_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: axis_tx_protocol_crc_0, and set properties
+  set block_name axis_tx_protocol_crc
+  set block_cell_name axis_tx_protocol_crc_0
+  if { [catch {set axis_tx_protocol_crc_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $axis_tx_protocol_crc_0 eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
@@ -348,9 +370,9 @@ proc create_root_design { parentCell } {
    CONFIG.C_AREA_OPTIMIZED {2} \
    CONFIG.C_DCACHE_ADDR_TAG {0} \
    CONFIG.C_DCACHE_USE_WRITEBACK {1} \
-   CONFIG.C_DEBUG_ENABLED {2} \
-   CONFIG.C_DEBUG_LATENCY_COUNTERS {4} \
-   CONFIG.C_DEBUG_PROFILE_SIZE {4096} \
+   CONFIG.C_DEBUG_ENABLED {1} \
+   CONFIG.C_DEBUG_LATENCY_COUNTERS {1} \
+   CONFIG.C_DEBUG_PROFILE_SIZE {0} \
    CONFIG.C_DIV_ZERO_EXCEPTION {1} \
    CONFIG.C_D_AXI {1} \
    CONFIG.C_D_LMB {1} \
@@ -361,7 +383,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_MMU_ZONES {2} \
    CONFIG.C_M_AXI_D_BUS_EXCEPTION {1} \
    CONFIG.C_M_AXI_I_BUS_EXCEPTION {1} \
-   CONFIG.C_NUMBER_OF_PC_BRK {8} \
+   CONFIG.C_NUMBER_OF_PC_BRK {2} \
    CONFIG.C_OPCODE_0x0_ILLEGAL {1} \
    CONFIG.C_UNALIGNED_EXCEPTIONS {1} \
    CONFIG.C_USE_BARREL {1} \
@@ -451,11 +473,13 @@ proc create_root_design { parentCell } {
   # Create interface connections
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins axi_bram_ctrl_0_bram/BRAM_PORTA]
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTB [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTB] [get_bd_intf_pins axi_bram_ctrl_0_bram/BRAM_PORTB]
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins uart_axis_0/s_axis]
+  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins axis_tx_protocol_crc_0/s_axis]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins microblaze_0_axi_periph/S01_AXI]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins microblaze_0_axi_periph/S02_AXI]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXI_SG [get_bd_intf_pins axi_dma_0/M_AXI_SG] [get_bd_intf_pins microblaze_0_axi_periph/S03_AXI]
   connect_bd_intf_net -intf_net axis_data_fifo_0_M_AXIS [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axis_data_fifo_0/M_AXIS]
+  connect_bd_intf_net -intf_net axis_tx_esc_protocol_0_m_axis [get_bd_intf_pins axis_tx_esc_protocol_0/m_axis] [get_bd_intf_pins uart_axis_0/s_axis]
+  connect_bd_intf_net -intf_net axis_tx_protocol_crc_0_m_axis [get_bd_intf_pins axis_tx_esc_protocol_0/s_axis] [get_bd_intf_pins axis_tx_protocol_crc_0/m_axis]
   connect_bd_intf_net -intf_net microblaze_0_axi_dp [get_bd_intf_pins microblaze_0/M_AXI_DP] [get_bd_intf_pins microblaze_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M01_AXI [get_bd_intf_pins axi_uartlite_FreeRTOS/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M02_AXI [get_bd_intf_pins axi_timer_FreeRTOS/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M02_AXI]
@@ -478,6 +502,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_timer_FreeRTOS_interrupt [get_bd_pins axi_timer_FreeRTOS/interrupt] [get_bd_pins microblaze_0_xlconcat/In1]
   connect_bd_net -net axi_uartlite_0_tx [get_bd_ports pio2] [get_bd_pins axi_uartlite_FreeRTOS/tx]
   connect_bd_net -net axi_uartlite_FreeRTOS_interrupt [get_bd_pins axi_uartlite_FreeRTOS/interrupt] [get_bd_pins microblaze_0_xlconcat/In0]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_timer_FreeRTOS/s_axi_aclk] [get_bd_pins axi_uartlite_FreeRTOS/s_axi_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins axis_tx_esc_protocol_0/axis_aclk] [get_bd_pins axis_tx_protocol_crc_0/axis_aclk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins dshot_axi_0/S_AXI_ACLK] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/M07_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_axi_periph/S02_ACLK] [get_bd_pins microblaze_0_axi_periph/S03_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins pwm_capture_0/S_AXI_ACLK] [get_bd_pins rst_clk_wiz_0_120M/slowest_sync_clk] [get_bd_pins uart_axis_0/axis_aclk]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins rst_clk_wiz_0_120M/dcm_locked]
   connect_bd_net -net dshot_axi_0_o_dshot_0 [get_bd_ports pio6] [get_bd_pins dshot_axi_0/o_dshot_0]
   connect_bd_net -net dshot_axi_0_o_dshot_1 [get_bd_ports pio7] [get_bd_pins dshot_axi_0/o_dshot_1]
@@ -490,12 +515,11 @@ proc create_root_design { parentCell } {
   connect_bd_net -net i_pwm_4_0_1 [get_bd_ports ja_4] [get_bd_pins pwm_capture_0/i_pwm_4]
   connect_bd_net -net i_pwm_5_0_1 [get_bd_ports ja_5] [get_bd_pins pwm_capture_0/i_pwm_5]
   connect_bd_net -net mdm_1_debug_sys_rst [get_bd_pins mdm_1/Debug_SYS_Rst] [get_bd_pins rst_clk_wiz_0_120M/mb_debug_sys_rst]
-  connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/m_axi_sg_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_timer_FreeRTOS/s_axi_aclk] [get_bd_pins axi_uartlite_FreeRTOS/s_axi_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins dshot_axi_0/S_AXI_ACLK] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/M07_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_axi_periph/S02_ACLK] [get_bd_pins microblaze_0_axi_periph/S03_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins pwm_capture_0/S_AXI_ACLK] [get_bd_pins rst_clk_wiz_0_120M/slowest_sync_clk] [get_bd_pins uart_axis_0/axis_aclk]
   connect_bd_net -net microblaze_0_intr [get_bd_pins microblaze_0_axi_intc/intr] [get_bd_pins microblaze_0_xlconcat/dout]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_0/reset] [get_bd_pins rst_clk_wiz_0_120M/ext_reset_in]
   connect_bd_net -net rst_clk_wiz_0_120M_bus_struct_reset [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_clk_wiz_0_120M/bus_struct_reset]
   connect_bd_net -net rst_clk_wiz_0_120M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins microblaze_0_axi_intc/processor_rst] [get_bd_pins rst_clk_wiz_0_120M/mb_reset]
-  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_timer_FreeRTOS/s_axi_aresetn] [get_bd_pins axi_uartlite_FreeRTOS/s_axi_aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins dshot_axi_0/S_AXI_ARESETN] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/M05_ARESETN] [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins microblaze_0_axi_periph/M07_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins microblaze_0_axi_periph/S01_ARESETN] [get_bd_pins microblaze_0_axi_periph/S02_ARESETN] [get_bd_pins microblaze_0_axi_periph/S03_ARESETN] [get_bd_pins pwm_capture_0/S_AXI_ARESETN] [get_bd_pins rst_clk_wiz_0_120M/peripheral_aresetn] [get_bd_pins uart_axis_0/axis_reset]
+  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_timer_FreeRTOS/s_axi_aresetn] [get_bd_pins axi_uartlite_FreeRTOS/s_axi_aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins axis_tx_esc_protocol_0/axis_reset] [get_bd_pins axis_tx_protocol_crc_0/axis_reset] [get_bd_pins dshot_axi_0/S_AXI_ARESETN] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/M05_ARESETN] [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins microblaze_0_axi_periph/M07_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins microblaze_0_axi_periph/S01_ARESETN] [get_bd_pins microblaze_0_axi_periph/S02_ARESETN] [get_bd_pins microblaze_0_axi_periph/S03_ARESETN] [get_bd_pins pwm_capture_0/S_AXI_ARESETN] [get_bd_pins rst_clk_wiz_0_120M/peripheral_aresetn] [get_bd_pins uart_axis_0/axis_reset]
   connect_bd_net -net rx_0_1 [get_bd_ports pio1] [get_bd_pins axi_uartlite_FreeRTOS/rx]
   connect_bd_net -net simple_mux_0_o_output_0 [get_bd_ports pio3] [get_bd_pins simple_mux_0/o_output_0]
   connect_bd_net -net simple_mux_0_o_output_1 [get_bd_ports uart_tx] [get_bd_pins simple_mux_0/o_output_1]

@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-//Date        : Sun Aug 23 11:41:18 2020
+//Date        : Sat Aug 29 18:24:10 2020
 //Host        : hp running 64-bit Ubuntu 20.04.1 LTS
 //Command     : generate_target axis_dma_design.bd
 //Design      : axis_dma_design
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "axis_dma_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=axis_dma_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=46,numReposBlks=32,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=10,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=2,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "axis_dma_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "axis_dma_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=axis_dma_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=48,numReposBlks=34,numNonXlnxBlks=0,numHierBlks=14,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=10,da_board_cnt=3,da_bram_cntlr_cnt=2,da_clkrst_cnt=20,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "axis_dma_design.hwdef" *) 
 module axis_dma_design
    (ja_0,
     ja_1,
@@ -65,6 +65,7 @@ module axis_dma_design
   wire axi_bram_ctrl_0_BRAM_PORTB_RST;
   wire [3:0]axi_bram_ctrl_0_BRAM_PORTB_WE;
   wire [7:0]axi_dma_0_M_AXIS_MM2S_TDATA;
+  wire axi_dma_0_M_AXIS_MM2S_TLAST;
   wire axi_dma_0_M_AXIS_MM2S_TREADY;
   wire axi_dma_0_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_0_M_AXI_MM2S_ARADDR;
@@ -135,6 +136,14 @@ module axis_dma_design
   wire axis_data_fifo_0_M_AXIS_TLAST;
   wire axis_data_fifo_0_M_AXIS_TREADY;
   wire axis_data_fifo_0_M_AXIS_TVALID;
+  wire [7:0]axis_tx_esc_protocol_0_m_axis_TDATA;
+  wire axis_tx_esc_protocol_0_m_axis_TREADY;
+  wire axis_tx_esc_protocol_0_m_axis_TVALID;
+  wire [7:0]axis_tx_protocol_crc_0_m_axis_TDATA;
+  wire axis_tx_protocol_crc_0_m_axis_TLAST;
+  wire axis_tx_protocol_crc_0_m_axis_TREADY;
+  wire axis_tx_protocol_crc_0_m_axis_TVALID;
+  wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
   wire dshot_axi_0_o_dshot_0;
   wire dshot_axi_0_o_dshot_1;
@@ -147,7 +156,6 @@ module axis_dma_design
   wire i_pwm_4_0_1;
   wire i_pwm_5_0_1;
   wire mdm_1_debug_sys_rst;
-  wire microblaze_0_Clk;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
   wire microblaze_0_axi_dp_ARREADY;
@@ -409,7 +417,7 @@ module axis_dma_design
         .bram_we_b(axi_bram_ctrl_0_BRAM_PORTB_WE),
         .bram_wrdata_a(axi_bram_ctrl_0_BRAM_PORTA_DIN),
         .bram_wrdata_b(axi_bram_ctrl_0_BRAM_PORTB_DIN),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(microblaze_0_axi_periph_M03_AXI_ARADDR[13:0]),
         .s_axi_arburst(microblaze_0_axi_periph_M03_AXI_ARBURST),
         .s_axi_arcache(microblaze_0_axi_periph_M03_AXI_ARCACHE),
@@ -463,7 +471,7 @@ module axis_dma_design
         .web(axi_bram_ctrl_0_BRAM_PORTB_WE));
   axis_dma_design_axi_dma_0_1 axi_dma_0
        (.axi_resetn(rst_clk_wiz_0_120M_peripheral_aresetn),
-        .m_axi_mm2s_aclk(microblaze_0_Clk),
+        .m_axi_mm2s_aclk(clk_wiz_0_clk_out1),
         .m_axi_mm2s_araddr(axi_dma_0_M_AXI_MM2S_ARADDR),
         .m_axi_mm2s_arburst(axi_dma_0_M_AXI_MM2S_ARBURST),
         .m_axi_mm2s_arcache(axi_dma_0_M_AXI_MM2S_ARCACHE),
@@ -477,7 +485,7 @@ module axis_dma_design
         .m_axi_mm2s_rready(axi_dma_0_M_AXI_MM2S_RREADY),
         .m_axi_mm2s_rresp(axi_dma_0_M_AXI_MM2S_RRESP),
         .m_axi_mm2s_rvalid(axi_dma_0_M_AXI_MM2S_RVALID),
-        .m_axi_s2mm_aclk(microblaze_0_Clk),
+        .m_axi_s2mm_aclk(clk_wiz_0_clk_out1),
         .m_axi_s2mm_awaddr(axi_dma_0_M_AXI_S2MM_AWADDR),
         .m_axi_s2mm_awburst(axi_dma_0_M_AXI_S2MM_AWBURST),
         .m_axi_s2mm_awcache(axi_dma_0_M_AXI_S2MM_AWCACHE),
@@ -494,7 +502,7 @@ module axis_dma_design
         .m_axi_s2mm_wready(axi_dma_0_M_AXI_S2MM_WREADY),
         .m_axi_s2mm_wstrb(axi_dma_0_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_dma_0_M_AXI_S2MM_WVALID),
-        .m_axi_sg_aclk(microblaze_0_Clk),
+        .m_axi_sg_aclk(clk_wiz_0_clk_out1),
         .m_axi_sg_araddr(axi_dma_0_M_AXI_SG_ARADDR),
         .m_axi_sg_arburst(axi_dma_0_M_AXI_SG_ARBURST),
         .m_axi_sg_arcache(axi_dma_0_M_AXI_SG_ARCACHE),
@@ -525,11 +533,12 @@ module axis_dma_design
         .m_axi_sg_wstrb(axi_dma_0_M_AXI_SG_WSTRB),
         .m_axi_sg_wvalid(axi_dma_0_M_AXI_SG_WVALID),
         .m_axis_mm2s_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .m_axis_mm2s_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
         .m_axis_mm2s_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
         .mm2s_introut(axi_dma_0_mm2s_introut),
         .s2mm_introut(axi_dma_0_s2mm_introut),
-        .s_axi_lite_aclk(microblaze_0_Clk),
+        .s_axi_lite_aclk(clk_wiz_0_clk_out1),
         .s_axi_lite_araddr(microblaze_0_axi_periph_M04_AXI_ARADDR[9:0]),
         .s_axi_lite_arready(microblaze_0_axi_periph_M04_AXI_ARREADY),
         .s_axi_lite_arvalid(microblaze_0_axi_periph_M04_AXI_ARVALID),
@@ -553,7 +562,7 @@ module axis_dma_design
         .s_axis_s2mm_tvalid(axis_data_fifo_0_M_AXIS_TVALID));
   axis_dma_design_axi_gpio_0_0 axi_gpio_0
        (.gpio_io_o(axi_gpio_0_gpio_io_o),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(microblaze_0_axi_periph_M05_AXI_ARADDR[8:0]),
         .s_axi_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_axi_periph_M05_AXI_ARREADY),
@@ -577,7 +586,7 @@ module axis_dma_design
         .capturetrig1(1'b0),
         .freeze(1'b0),
         .interrupt(axi_timer_FreeRTOS_interrupt),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(microblaze_0_axi_periph_M02_AXI_ARADDR[4:0]),
         .s_axi_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_axi_periph_M02_AXI_ARREADY),
@@ -599,7 +608,7 @@ module axis_dma_design
   axis_dma_design_axi_uartlite_0_0 axi_uartlite_FreeRTOS
        (.interrupt(axi_uartlite_FreeRTOS_interrupt),
         .rx(rx_0_1),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR[3:0]),
         .s_axi_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_axi_periph_M01_AXI_ARREADY),
@@ -624,19 +633,40 @@ module axis_dma_design
         .m_axis_tlast(axis_data_fifo_0_M_AXIS_TLAST),
         .m_axis_tready(axis_data_fifo_0_M_AXIS_TREADY),
         .m_axis_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
-        .s_axis_aclk(microblaze_0_Clk),
+        .s_axis_aclk(clk_wiz_0_clk_out1),
         .s_axis_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
         .s_axis_tdata(uart_axis_0_m_axis_TDATA),
         .s_axis_tlast(uart_axis_0_m_axis_TLAST),
         .s_axis_tready(uart_axis_0_m_axis_TREADY),
         .s_axis_tvalid(uart_axis_0_m_axis_TVALID));
+  axis_dma_design_axis_tx_esc_protocol_0_1 axis_tx_esc_protocol_0
+       (.axis_aclk(clk_wiz_0_clk_out1),
+        .axis_reset(rst_clk_wiz_0_120M_peripheral_aresetn),
+        .m_axis_tdata(axis_tx_esc_protocol_0_m_axis_TDATA),
+        .m_axis_tready(axis_tx_esc_protocol_0_m_axis_TREADY),
+        .m_axis_tvalid(axis_tx_esc_protocol_0_m_axis_TVALID),
+        .s_axis_tdata(axis_tx_protocol_crc_0_m_axis_TDATA),
+        .s_axis_tlast(axis_tx_protocol_crc_0_m_axis_TLAST),
+        .s_axis_tready(axis_tx_protocol_crc_0_m_axis_TREADY),
+        .s_axis_tvalid(axis_tx_protocol_crc_0_m_axis_TVALID));
+  axis_dma_design_axis_tx_protocol_crc_0_0 axis_tx_protocol_crc_0
+       (.axis_aclk(clk_wiz_0_clk_out1),
+        .axis_reset(rst_clk_wiz_0_120M_peripheral_aresetn),
+        .m_axis_tdata(axis_tx_protocol_crc_0_m_axis_TDATA),
+        .m_axis_tlast(axis_tx_protocol_crc_0_m_axis_TLAST),
+        .m_axis_tready(axis_tx_protocol_crc_0_m_axis_TREADY),
+        .m_axis_tvalid(axis_tx_protocol_crc_0_m_axis_TVALID),
+        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   axis_dma_design_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(sys_clock_1),
-        .clk_out1(microblaze_0_Clk),
+        .clk_out1(clk_wiz_0_clk_out1),
         .locked(clk_wiz_0_locked),
         .reset(reset_1));
   axis_dma_design_dshot_axi_0_0 dshot_axi_0
-       (.S_AXI_ACLK(microblaze_0_Clk),
+       (.S_AXI_ACLK(clk_wiz_0_clk_out1),
         .S_AXI_ARADDR(microblaze_0_axi_periph_M07_AXI_ARADDR[3:0]),
         .S_AXI_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S_AXI_ARPROT(microblaze_0_axi_periph_M07_AXI_ARPROT),
@@ -676,7 +706,7 @@ module axis_dma_design
   (* KEEP_HIERARCHY = "yes" *) 
   axis_dma_design_microblaze_0_0 microblaze_0
        (.Byte_Enable(microblaze_0_dlmb_1_BE),
-        .Clk(microblaze_0_Clk),
+        .Clk(clk_wiz_0_clk_out1),
         .DCE(microblaze_0_dlmb_1_CE),
         .DReady(microblaze_0_dlmb_1_READY),
         .DUE(microblaze_0_dlmb_1_UE),
@@ -692,8 +722,6 @@ module axis_dma_design
         .Dbg_Shift(microblaze_0_debug_SHIFT),
         .Dbg_TDI(microblaze_0_debug_TDI),
         .Dbg_TDO(microblaze_0_debug_TDO),
-        .Dbg_Trig_Ack_In({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .Dbg_Trig_Out({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .Dbg_Update(microblaze_0_debug_UPDATE),
         .Debug_Rst(microblaze_0_debug_RST),
         .ICE(microblaze_0_ilmb_1_CE),
@@ -734,9 +762,9 @@ module axis_dma_design
         .intr(microblaze_0_intr),
         .irq(microblaze_0_interrupt_INTERRUPT),
         .processor_ack({microblaze_0_interrupt_ACK[0],microblaze_0_interrupt_ACK[1]}),
-        .processor_clk(microblaze_0_Clk),
+        .processor_clk(clk_wiz_0_clk_out1),
         .processor_rst(rst_clk_wiz_0_120M_mb_reset),
-        .s_axi_aclk(microblaze_0_Clk),
+        .s_axi_aclk(clk_wiz_0_clk_out1),
         .s_axi_araddr(microblaze_0_intc_axi_ARADDR[8:0]),
         .s_axi_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
         .s_axi_arready(microblaze_0_intc_axi_ARREADY),
@@ -756,9 +784,9 @@ module axis_dma_design
         .s_axi_wstrb(microblaze_0_intc_axi_WSTRB),
         .s_axi_wvalid(microblaze_0_intc_axi_WVALID));
   axis_dma_design_microblaze_0_axi_periph_0 microblaze_0_axi_periph
-       (.ACLK(microblaze_0_Clk),
+       (.ACLK(clk_wiz_0_clk_out1),
         .ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
-        .M00_ACLK(microblaze_0_Clk),
+        .M00_ACLK(clk_wiz_0_clk_out1),
         .M00_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M00_AXI_araddr(microblaze_0_intc_axi_ARADDR),
         .M00_AXI_arready(microblaze_0_intc_axi_ARREADY),
@@ -777,7 +805,7 @@ module axis_dma_design
         .M00_AXI_wready(microblaze_0_intc_axi_WREADY),
         .M00_AXI_wstrb(microblaze_0_intc_axi_WSTRB),
         .M00_AXI_wvalid(microblaze_0_intc_axi_WVALID),
-        .M01_ACLK(microblaze_0_Clk),
+        .M01_ACLK(clk_wiz_0_clk_out1),
         .M01_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M01_AXI_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR),
         .M01_AXI_arready(microblaze_0_axi_periph_M01_AXI_ARREADY),
@@ -796,7 +824,7 @@ module axis_dma_design
         .M01_AXI_wready(microblaze_0_axi_periph_M01_AXI_WREADY),
         .M01_AXI_wstrb(microblaze_0_axi_periph_M01_AXI_WSTRB),
         .M01_AXI_wvalid(microblaze_0_axi_periph_M01_AXI_WVALID),
-        .M02_ACLK(microblaze_0_Clk),
+        .M02_ACLK(clk_wiz_0_clk_out1),
         .M02_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M02_AXI_araddr(microblaze_0_axi_periph_M02_AXI_ARADDR),
         .M02_AXI_arready(microblaze_0_axi_periph_M02_AXI_ARREADY),
@@ -815,7 +843,7 @@ module axis_dma_design
         .M02_AXI_wready(microblaze_0_axi_periph_M02_AXI_WREADY),
         .M02_AXI_wstrb(microblaze_0_axi_periph_M02_AXI_WSTRB),
         .M02_AXI_wvalid(microblaze_0_axi_periph_M02_AXI_WVALID),
-        .M03_ACLK(microblaze_0_Clk),
+        .M03_ACLK(clk_wiz_0_clk_out1),
         .M03_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M03_AXI_araddr(microblaze_0_axi_periph_M03_AXI_ARADDR),
         .M03_AXI_arburst(microblaze_0_axi_periph_M03_AXI_ARBURST),
@@ -852,7 +880,7 @@ module axis_dma_design
         .M03_AXI_wready(microblaze_0_axi_periph_M03_AXI_WREADY),
         .M03_AXI_wstrb(microblaze_0_axi_periph_M03_AXI_WSTRB),
         .M03_AXI_wvalid(microblaze_0_axi_periph_M03_AXI_WVALID),
-        .M04_ACLK(microblaze_0_Clk),
+        .M04_ACLK(clk_wiz_0_clk_out1),
         .M04_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M04_AXI_araddr(microblaze_0_axi_periph_M04_AXI_ARADDR),
         .M04_AXI_arready(microblaze_0_axi_periph_M04_AXI_ARREADY),
@@ -870,7 +898,7 @@ module axis_dma_design
         .M04_AXI_wdata(microblaze_0_axi_periph_M04_AXI_WDATA),
         .M04_AXI_wready(microblaze_0_axi_periph_M04_AXI_WREADY),
         .M04_AXI_wvalid(microblaze_0_axi_periph_M04_AXI_WVALID),
-        .M05_ACLK(microblaze_0_Clk),
+        .M05_ACLK(clk_wiz_0_clk_out1),
         .M05_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M05_AXI_araddr(microblaze_0_axi_periph_M05_AXI_ARADDR),
         .M05_AXI_arready(microblaze_0_axi_periph_M05_AXI_ARREADY),
@@ -889,7 +917,7 @@ module axis_dma_design
         .M05_AXI_wready(microblaze_0_axi_periph_M05_AXI_WREADY),
         .M05_AXI_wstrb(microblaze_0_axi_periph_M05_AXI_WSTRB),
         .M05_AXI_wvalid(microblaze_0_axi_periph_M05_AXI_WVALID),
-        .M06_ACLK(microblaze_0_Clk),
+        .M06_ACLK(clk_wiz_0_clk_out1),
         .M06_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M06_AXI_araddr(microblaze_0_axi_periph_M06_AXI_ARADDR),
         .M06_AXI_arprot(microblaze_0_axi_periph_M06_AXI_ARPROT),
@@ -910,7 +938,7 @@ module axis_dma_design
         .M06_AXI_wready(microblaze_0_axi_periph_M06_AXI_WREADY),
         .M06_AXI_wstrb(microblaze_0_axi_periph_M06_AXI_WSTRB),
         .M06_AXI_wvalid(microblaze_0_axi_periph_M06_AXI_WVALID),
-        .M07_ACLK(microblaze_0_Clk),
+        .M07_ACLK(clk_wiz_0_clk_out1),
         .M07_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .M07_AXI_araddr(microblaze_0_axi_periph_M07_AXI_ARADDR),
         .M07_AXI_arprot(microblaze_0_axi_periph_M07_AXI_ARPROT),
@@ -931,7 +959,7 @@ module axis_dma_design
         .M07_AXI_wready(microblaze_0_axi_periph_M07_AXI_WREADY),
         .M07_AXI_wstrb(microblaze_0_axi_periph_M07_AXI_WSTRB),
         .M07_AXI_wvalid(microblaze_0_axi_periph_M07_AXI_WVALID),
-        .S00_ACLK(microblaze_0_Clk),
+        .S00_ACLK(clk_wiz_0_clk_out1),
         .S00_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S00_AXI_araddr(microblaze_0_axi_dp_ARADDR),
         .S00_AXI_arprot(microblaze_0_axi_dp_ARPROT),
@@ -952,7 +980,7 @@ module axis_dma_design
         .S00_AXI_wready(microblaze_0_axi_dp_WREADY),
         .S00_AXI_wstrb(microblaze_0_axi_dp_WSTRB),
         .S00_AXI_wvalid(microblaze_0_axi_dp_WVALID),
-        .S01_ACLK(microblaze_0_Clk),
+        .S01_ACLK(clk_wiz_0_clk_out1),
         .S01_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S01_AXI_araddr(axi_dma_0_M_AXI_MM2S_ARADDR),
         .S01_AXI_arburst(axi_dma_0_M_AXI_MM2S_ARBURST),
@@ -967,7 +995,7 @@ module axis_dma_design
         .S01_AXI_rready(axi_dma_0_M_AXI_MM2S_RREADY),
         .S01_AXI_rresp(axi_dma_0_M_AXI_MM2S_RRESP),
         .S01_AXI_rvalid(axi_dma_0_M_AXI_MM2S_RVALID),
-        .S02_ACLK(microblaze_0_Clk),
+        .S02_ACLK(clk_wiz_0_clk_out1),
         .S02_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S02_AXI_awaddr(axi_dma_0_M_AXI_S2MM_AWADDR),
         .S02_AXI_awburst(axi_dma_0_M_AXI_S2MM_AWBURST),
@@ -985,7 +1013,7 @@ module axis_dma_design
         .S02_AXI_wready(axi_dma_0_M_AXI_S2MM_WREADY),
         .S02_AXI_wstrb(axi_dma_0_M_AXI_S2MM_WSTRB),
         .S02_AXI_wvalid(axi_dma_0_M_AXI_S2MM_WVALID),
-        .S03_ACLK(microblaze_0_Clk),
+        .S03_ACLK(clk_wiz_0_clk_out1),
         .S03_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S03_AXI_araddr(axi_dma_0_M_AXI_SG_ARADDR),
         .S03_AXI_arburst(axi_dma_0_M_AXI_SG_ARBURST),
@@ -1036,7 +1064,7 @@ module axis_dma_design
         .ILMB_ready(microblaze_0_ilmb_1_READY),
         .ILMB_ue(microblaze_0_ilmb_1_UE),
         .ILMB_wait(microblaze_0_ilmb_1_WAIT),
-        .LMB_Clk(microblaze_0_Clk),
+        .LMB_Clk(clk_wiz_0_clk_out1),
         .SYS_Rst(rst_clk_wiz_0_120M_bus_struct_reset));
   axis_dma_design_microblaze_0_xlconcat_0 microblaze_0_xlconcat
        (.In0(axi_uartlite_FreeRTOS_interrupt),
@@ -1045,7 +1073,7 @@ module axis_dma_design
         .In3(axi_dma_0_s2mm_introut),
         .dout(microblaze_0_intr));
   axis_dma_design_pwm_capture_0_0 pwm_capture_0
-       (.S_AXI_ACLK(microblaze_0_Clk),
+       (.S_AXI_ACLK(clk_wiz_0_clk_out1),
         .S_AXI_ARADDR(microblaze_0_axi_periph_M06_AXI_ARADDR[4:0]),
         .S_AXI_ARESETN(rst_clk_wiz_0_120M_peripheral_aresetn),
         .S_AXI_ARPROT(microblaze_0_axi_periph_M06_AXI_ARPROT),
@@ -1080,7 +1108,7 @@ module axis_dma_design
         .mb_debug_sys_rst(mdm_1_debug_sys_rst),
         .mb_reset(rst_clk_wiz_0_120M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_0_120M_peripheral_aresetn),
-        .slowest_sync_clk(microblaze_0_Clk));
+        .slowest_sync_clk(clk_wiz_0_clk_out1));
   axis_dma_design_simple_mux_0_0 simple_mux_0
        (.i_input(uart_axis_0_uart_txd),
         .o_output_0(simple_mux_0_o_output_0),
@@ -1090,15 +1118,15 @@ module axis_dma_design
         .o_output_0(simple_mux_1_o_output_0),
         .o_output_1(simple_mux_1_o_output_1));
   axis_dma_design_uart_axis_0_0 uart_axis_0
-       (.axis_aclk(microblaze_0_Clk),
+       (.axis_aclk(clk_wiz_0_clk_out1),
         .axis_reset(rst_clk_wiz_0_120M_peripheral_aresetn),
         .m_axis_tdata(uart_axis_0_m_axis_TDATA),
         .m_axis_tlast(uart_axis_0_m_axis_TLAST),
         .m_axis_tready(uart_axis_0_m_axis_TREADY),
         .m_axis_tvalid(uart_axis_0_m_axis_TVALID),
-        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .s_axis_tdata(axis_tx_esc_protocol_0_m_axis_TDATA),
+        .s_axis_tready(axis_tx_esc_protocol_0_m_axis_TREADY),
+        .s_axis_tvalid(axis_tx_esc_protocol_0_m_axis_TVALID),
         .uart_rxd(simple_mux_1_o_output_0),
         .uart_txd(uart_axis_0_uart_txd));
 endmodule

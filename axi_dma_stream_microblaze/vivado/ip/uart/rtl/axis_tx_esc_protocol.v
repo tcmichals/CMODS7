@@ -96,15 +96,19 @@ always @(posedge axis_aclk) begin
 						SOP_BYTE, EOP_BYTE, ESC_BYTE:  begin
 							$display("SOP_BYTE, EOP_BYTE, ESC_BYTE in stream ESC 0x%X",s_axis_tdata );
 							m_pkt_byte <= { EOP_BYTE, s_axis_tdata ^ XOR_BYTE, ESC_BYTE };
-							if (s_axis_tlast)
+							if (s_axis_tlast) begin
 								bytes_to_send <= 4'd3;
+								first_byte_pkt <= 1'b1;
+							end
 							else
 								bytes_to_send <= 4'd2;
 					end
 					default: begin
 						m_pkt_byte <= { EOP_BYTE, EOP_BYTE , s_axis_tdata };
-						if (s_axis_tlast)
+						if (s_axis_tlast) begin
 							bytes_to_send <= 4'd2;
+							first_byte_pkt <= 1'b1;
+						end
 						else
 							bytes_to_send <= 4'd1;
 					end
@@ -112,7 +116,11 @@ always @(posedge axis_aclk) begin
 				end
 			end
 			else begin
-				s_tready <= READY;
+				if ( m_axis_tready) 
+					s_tready <= READY;
+				else
+					s_tready <= NOT_READY;
+
 				first_byte_pkt <= first_byte_pkt;
 				input_packet_state <= input_packet_state;
 				ouput_packet_state <= ouput_packet_state;

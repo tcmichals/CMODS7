@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8b3d" --include "../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/ec67/hdl" --include "../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8713/hdl" \
+"../../../../../ip/uart/rtl/crc_ccitt.v" \
+"../../../../../ip/uart/tb/axis_protocol_crc_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

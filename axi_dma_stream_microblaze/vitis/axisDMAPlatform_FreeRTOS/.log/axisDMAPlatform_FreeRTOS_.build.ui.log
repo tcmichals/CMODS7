@@ -1,16 +1,6 @@
-2020-08-22T18:12:59.45050100255-18:12:59 **** Build of project axisDMAPlatform_FreeRTOS ****
-000-buildplatform.sh 42761 axisDMAPlatform_FreeRTOS  
-000-XSDB Server Channel: tcfchan#17
-000-hw_proc_handle is microblaze_0
-000-slave_ifs S00_AXI bus_name microblaze_0_M_AXI_DP
-000-/home/tcmichals/hdisk/Xilinx/Vitis/2020.1/gnu/microblaze/lin
-000-In start copy microblaze
-000-INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
-000-INFO:[hsi-utils-101] "xget_interrupt_sources" tcl procedure is deprecated, use "hsi::utils::get_interrupt_sources microblaze_0" instead
-000-INFO:[hsi-utils-101] "xget_name" tcl procedure is deprecated, use "hsi::utils::get_ip_param_name microblaze_0_axi_intc DEVICE_ID" instead
-000-INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
-000-INFO:[hsi-utils-101] "xprint_generated_header" tcl procedure is deprecated, use "hsi::utils::write_c_header " instead
-000-INFO:[hsi-utils-101] "get_ip_version" tcl procedure is deprecated, use "hsi::utils::get_ip_version microblaze_0" instead
+2020-08-29T18:31:41.36492800255-18:31:41 **** Build of project axisDMAPlatform_FreeRTOS ****
+000-buildplatform.sh 42011 axisDMAPlatform_FreeRTOS  
+000-XSDB Server Channel: tcfchan#43
 000-Building the BSP Library for domain  - freertos10_xilinx_domain on processor microblaze_0
 000-Running Make include in microblaze_0/libsrc/gpio_v4_6/src
 000-
@@ -132,9 +122,8 @@
 000-      |         ^~~~~~~
 000-Compiling FreeRTOS
 000-
-000-/home/tcmichals/hdisk/Xilinx/Vitis/2020.1/gnu/microblaze/lin/bin/../x86_64-oesdk-linux/usr/bin/microblaze-xilinx-elf/microblaze-xilinx-elf-ar.real: creating ../../../lib/libfreertos.a
 000-Finished building libraries
 000-
 00255-
-18:13:10 Build Finished (took 11s.37ms)
+18:31:53 Build Finished (took 12s.611ms)
 

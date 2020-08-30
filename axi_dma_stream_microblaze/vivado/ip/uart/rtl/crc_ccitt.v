@@ -23,9 +23,9 @@
 // CRC shift direction:         left
 
 module crc_ccitt (
-	input [15:0] crcIn,
-	input [7:0] data,
-	output [15:0] crcOut
+	input wire [15:0] crcIn,
+	input wire [7:0] data,
+	output wire [15:0] crcOut
 );
 	assign crcOut[0] = (crcIn[8] ^ crcIn[12] ^ data[0] ^ data[4]);
 	assign crcOut[1] = (crcIn[9] ^ crcIn[13] ^ data[1] ^ data[5]);

@@ -1,0 +1,17 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/tcmichals/hdisk/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -wto b513d3098b334d3b93e52b870308e200 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot axis_protocol_crc_tb_behav xil_defaultlib.axis_protocol_crc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/crc_ccitt.v" Line 25. Module crc_ccitt doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/crc_ccitt.v" Line 25. Module crc_ccitt doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.crc_ccitt
+Compiling module xil_defaultlib.axis_tx_protocol_crc
+Compiling module xil_defaultlib.axis_protocol_crc_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot axis_protocol_crc_tb_behav

@@ -1,0 +1,8 @@
+0.7
+2020.1
+May 27 2020
+19:59:15
+/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
+/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/axis_tx_protocol_crc.v,1598306093,verilog,,,,axis_tx_protocol_crc,,,,,,,,
+/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/crc_ccitt.v,1598581514,verilog,,/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/tb/axis_protocol_crc_tb.v,,crc_ccitt,,,../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8713/hdl;../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8b3d;../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/ec67/hdl,,,,,
+/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/tb/axis_protocol_crc_tb.v,1598581592,verilog,,,/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/ip/uart/rtl/axis_tx_protocol_crc.v,axis_protocol_crc_tb,,,../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8713/hdl;../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/8b3d;../../../../axis_dma.srcs/sources_1/bd/axis_dma_design/ipshared/ec67/hdl,,,,,

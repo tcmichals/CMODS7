@@ -4434,3 +4434,1018 @@ con
 
 18:20:43 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
 23:31:37 INFO  : Disconnected from the channel tcfchan#19.
+21:14:03 INFO  : Launching XSCT server: xsct -n  -interactive /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/temp_xsdb_launch_script.tcl
+21:14:09 INFO  : XSCT server has started successfully.
+21:14:09 INFO  : Successfully done setting XSCT server connection channel  
+21:14:09 INFO  : plnx-install-location is set to ''
+21:14:09 INFO  : Successfully done setting workspace for the tool. 
+21:14:19 INFO  : Platform repository initialization has completed.
+21:14:19 INFO  : Registering command handlers for Vitis TCF services
+21:14:24 INFO  : Successfully done query RDI_DATADIR 
+21:32:05 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+21:32:05 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+21:32:09 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+21:32:09 INFO  : Updating application flags with new BSP settings...
+21:32:09 INFO  : Successfully updated application flags for project quadInterface.
+21:46:25 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+21:47:20 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+21:47:20 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+21:47:23 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+21:47:23 INFO  : Updating application flags with new BSP settings...
+21:47:23 INFO  : Successfully updated application flags for project quadInterface.
+21:47:30 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+21:47:30 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+21:47:30 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+21:47:30 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+21:49:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:49:25 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+21:49:25 INFO  : 'jtag frequency' command is executed.
+21:49:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+21:49:26 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+21:49:26 INFO  : Context for processor 'microblaze_0' is selected.
+21:49:26 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+21:49:26 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:49:26 INFO  : Context for processor 'microblaze_0' is selected.
+21:49:26 INFO  : System reset is completed.
+21:49:29 INFO  : 'after 3000' command is executed.
+21:49:29 INFO  : Context for processor 'microblaze_0' is selected.
+21:49:30 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+21:49:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+21:49:30 INFO  : Context for processor 'microblaze_0' is selected.
+21:49:30 INFO  : 'con' command is executed.
+21:49:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:49:30 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+21:50:13 INFO  : Disconnected from the channel tcfchan#5.
+21:50:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:50:14 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+21:50:14 INFO  : 'jtag frequency' command is executed.
+21:50:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+21:50:14 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+21:50:14 INFO  : Context for processor 'microblaze_0' is selected.
+21:50:14 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+21:50:14 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:50:14 INFO  : Context for processor 'microblaze_0' is selected.
+21:50:14 INFO  : System reset is completed.
+21:50:17 INFO  : 'after 3000' command is executed.
+21:50:17 INFO  : Context for processor 'microblaze_0' is selected.
+21:50:18 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+21:50:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+21:50:18 INFO  : Context for processor 'microblaze_0' is selected.
+21:50:18 INFO  : 'con' command is executed.
+21:50:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:50:18 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+22:15:54 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+22:16:06 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+22:18:02 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+22:18:02 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+22:18:06 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:18:12 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+22:18:12 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+22:18:12 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+22:18:12 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+22:31:09 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:34:21 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:34:58 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+22:34:58 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+22:35:01 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:35:34 INFO  : Successfully done sdx_reload_mss "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/microblaze_0/freertos10_xilinx_domain/bsp/system.mss"
+22:36:28 INFO  : (SwPlaform) Successfully done setParamInSpec 
+22:36:28 INFO  : (SwPlatform) Successfully done update_mss 
+22:36:29 INFO  : Successfully done sdx_reload_mss "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/microblaze_0/freertos10_xilinx_domain/bsp/system.mss"
+22:36:51 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+22:36:51 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+22:36:54 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:36:54 INFO  : Updating application flags with new BSP settings...
+22:36:55 INFO  : Successfully updated application flags for project quadInterface.
+22:37:17 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+22:37:59 INFO  : Disconnected from the channel tcfchan#6.
+22:37:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:37:59 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+22:37:59 INFO  : 'jtag frequency' command is executed.
+22:37:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+22:38:00 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+22:38:00 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:00 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+22:38:00 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:38:00 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:00 INFO  : System reset is completed.
+22:38:03 INFO  : 'after 3000' command is executed.
+22:38:03 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:03 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+22:38:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+22:38:04 INFO  : Context for processor 'microblaze_0' is selected.
+22:38:04 INFO  : 'con' command is executed.
+22:38:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:38:04 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+22:41:03 INFO  : Disconnected from the channel tcfchan#11.
+22:41:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:41:03 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+22:41:03 INFO  : 'jtag frequency' command is executed.
+22:41:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+22:41:04 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+22:41:04 INFO  : Context for processor 'microblaze_0' is selected.
+22:41:04 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+22:41:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:41:04 INFO  : Context for processor 'microblaze_0' is selected.
+22:41:04 INFO  : System reset is completed.
+22:41:07 INFO  : 'after 3000' command is executed.
+22:41:07 INFO  : Context for processor 'microblaze_0' is selected.
+22:41:07 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+22:41:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+22:41:07 INFO  : Context for processor 'microblaze_0' is selected.
+22:41:07 INFO  : 'con' command is executed.
+22:41:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:41:07 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+22:43:08 INFO  : Disconnected from the channel tcfchan#12.
+22:43:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:43:08 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+22:43:08 INFO  : 'jtag frequency' command is executed.
+22:43:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+22:43:08 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+22:43:08 INFO  : Context for processor 'microblaze_0' is selected.
+22:43:08 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+22:43:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+22:43:09 INFO  : Context for processor 'microblaze_0' is selected.
+22:43:09 INFO  : System reset is completed.
+22:43:12 INFO  : 'after 3000' command is executed.
+22:43:12 INFO  : Context for processor 'microblaze_0' is selected.
+22:43:12 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+22:43:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+22:43:12 INFO  : Context for processor 'microblaze_0' is selected.
+22:43:12 INFO  : 'con' command is executed.
+22:43:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+22:43:12 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+23:05:15 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+23:05:46 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+23:05:46 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+23:05:50 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+23:05:54 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+23:05:54 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+23:05:54 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+23:05:54 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+23:05:55 INFO  : Disconnected from the channel tcfchan#13.
+23:05:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:05:56 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+23:05:56 INFO  : 'jtag frequency' command is executed.
+23:05:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+23:05:56 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+23:05:56 INFO  : Context for processor 'microblaze_0' is selected.
+23:05:56 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+23:05:56 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:05:56 INFO  : Context for processor 'microblaze_0' is selected.
+23:05:56 INFO  : System reset is completed.
+23:05:59 INFO  : 'after 3000' command is executed.
+23:05:59 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:00 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+23:06:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+23:06:00 INFO  : Context for processor 'microblaze_0' is selected.
+23:06:00 INFO  : 'con' command is executed.
+23:06:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:06:00 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+23:26:23 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+23:26:47 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+23:26:47 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+23:26:50 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+23:26:59 INFO  : Disconnected from the channel tcfchan#16.
+23:27:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:27:00 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+23:27:00 INFO  : 'jtag frequency' command is executed.
+23:27:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+23:27:01 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+23:27:01 INFO  : Context for processor 'microblaze_0' is selected.
+23:27:01 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+23:27:01 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:27:01 INFO  : Context for processor 'microblaze_0' is selected.
+23:27:01 INFO  : System reset is completed.
+23:27:04 INFO  : 'after 3000' command is executed.
+23:27:04 INFO  : Context for processor 'microblaze_0' is selected.
+23:27:04 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+23:27:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+23:27:05 INFO  : Context for processor 'microblaze_0' is selected.
+23:27:05 INFO  : 'con' command is executed.
+23:27:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:27:05 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+23:28:10 INFO  : Disconnected from the channel tcfchan#19.
+23:28:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:28:10 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+23:28:10 INFO  : 'jtag frequency' command is executed.
+23:28:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+23:28:11 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+23:28:11 INFO  : Context for processor 'microblaze_0' is selected.
+23:28:11 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+23:28:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:28:11 INFO  : Context for processor 'microblaze_0' is selected.
+23:28:11 INFO  : System reset is completed.
+23:28:14 INFO  : 'after 3000' command is executed.
+23:28:14 INFO  : Context for processor 'microblaze_0' is selected.
+23:28:14 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+23:28:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+23:28:14 INFO  : Context for processor 'microblaze_0' is selected.
+23:28:15 INFO  : 'con' command is executed.
+23:28:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:28:15 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+23:30:07 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+23:30:27 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+23:30:27 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+23:30:30 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+23:30:33 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+23:30:33 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+23:30:33 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+23:30:33 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+23:30:44 INFO  : Disconnected from the channel tcfchan#20.
+23:30:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:30:45 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+23:30:45 INFO  : 'jtag frequency' command is executed.
+23:30:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+23:30:45 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+23:30:45 INFO  : Context for processor 'microblaze_0' is selected.
+23:30:45 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+23:30:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+23:30:45 INFO  : Context for processor 'microblaze_0' is selected.
+23:30:45 INFO  : System reset is completed.
+23:30:48 INFO  : 'after 3000' command is executed.
+23:30:48 INFO  : Context for processor 'microblaze_0' is selected.
+23:30:49 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+23:30:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+23:30:49 INFO  : Context for processor 'microblaze_0' is selected.
+23:30:49 INFO  : 'con' command is executed.
+23:30:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+23:30:49 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+00:05:10 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+00:05:40 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+00:05:40 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+00:05:43 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+00:05:48 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+00:05:48 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+00:05:48 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+00:05:48 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+00:05:58 INFO  : Disconnected from the channel tcfchan#23.
+00:05:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:05:58 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+00:05:58 INFO  : 'jtag frequency' command is executed.
+00:05:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+00:05:58 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+00:05:59 INFO  : Context for processor 'microblaze_0' is selected.
+00:05:59 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+00:05:59 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+00:05:59 INFO  : Context for processor 'microblaze_0' is selected.
+00:05:59 INFO  : System reset is completed.
+00:06:02 INFO  : 'after 3000' command is executed.
+00:06:02 INFO  : Context for processor 'microblaze_0' is selected.
+00:06:02 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+00:06:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+00:06:02 INFO  : Context for processor 'microblaze_0' is selected.
+00:06:02 INFO  : 'con' command is executed.
+00:06:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+00:06:02 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+00:18:26 ERROR : (XSDB Server)Terminated
+
+00:18:26 WARN  : channel "tcfchan#26" closed
+00:18:26 ERROR : (XSDB Server)exit due to repeated abort signals
+
+08:22:22 INFO  : Launching XSCT server: xsct -n  -interactive /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/temp_xsdb_launch_script.tcl
+08:22:29 INFO  : XSCT server has started successfully.
+08:22:29 INFO  : Successfully done setting XSCT server connection channel  
+08:22:29 INFO  : plnx-install-location is set to ''
+08:22:29 INFO  : Successfully done setting workspace for the tool. 
+08:22:38 INFO  : Platform repository initialization has completed.
+08:22:39 INFO  : Registering command handlers for Vitis TCF services
+08:22:53 INFO  : Successfully done query RDI_DATADIR 
+08:52:12 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+08:52:41 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+08:52:41 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+08:52:44 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+08:52:45 INFO  : Updating application flags with new BSP settings...
+08:52:45 INFO  : Successfully updated application flags for project quadInterface.
+08:52:49 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+08:52:49 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+08:52:49 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+08:52:49 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+08:53:43 INFO  : Successfully done sdx_reload_mss "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/microblaze_0/freertos10_xilinx_domain/bsp/system.mss"
+08:53:52 INFO  : (SwPlatform) Successfully done update_mss 
+08:53:52 INFO  : No changes in MSS file content so sources will not be generated.
+08:54:16 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+08:54:16 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+08:54:20 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+08:54:21 INFO  : Updating application flags with new BSP settings...
+08:54:21 INFO  : Successfully updated application flags for project quadInterface.
+08:54:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:54:36 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+08:54:36 INFO  : 'jtag frequency' command is executed.
+08:54:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+08:54:36 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+08:54:36 INFO  : Context for processor 'microblaze_0' is selected.
+08:54:36 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+08:54:36 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+08:54:36 INFO  : Context for processor 'microblaze_0' is selected.
+08:54:37 INFO  : System reset is completed.
+08:54:40 INFO  : 'after 3000' command is executed.
+08:54:40 INFO  : Context for processor 'microblaze_0' is selected.
+08:54:40 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+08:54:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+08:54:40 INFO  : Context for processor 'microblaze_0' is selected.
+08:54:40 INFO  : 'con' command is executed.
+08:54:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+08:54:40 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+09:12:36 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+09:13:04 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+09:13:04 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+09:13:07 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+09:13:12 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+09:13:12 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+09:13:12 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+09:13:12 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+09:13:42 INFO  : Disconnected from the channel tcfchan#6.
+09:13:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:13:42 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+09:13:42 INFO  : 'jtag frequency' command is executed.
+09:13:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+09:13:43 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+09:13:43 INFO  : Context for processor 'microblaze_0' is selected.
+09:13:43 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+09:13:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:13:43 INFO  : Context for processor 'microblaze_0' is selected.
+09:13:43 INFO  : System reset is completed.
+09:13:46 INFO  : 'after 3000' command is executed.
+09:13:46 INFO  : Context for processor 'microblaze_0' is selected.
+09:13:47 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+09:13:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+09:13:47 INFO  : Context for processor 'microblaze_0' is selected.
+09:13:47 INFO  : 'con' command is executed.
+09:13:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:13:47 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+09:45:01 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+09:45:28 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+09:45:28 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+09:45:32 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+09:45:37 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+09:45:37 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+09:45:37 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+09:45:37 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+09:45:45 INFO  : Disconnected from the channel tcfchan#10.
+09:46:06 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+09:46:06 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+09:46:10 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+09:46:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:46:18 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+09:46:18 INFO  : 'jtag frequency' command is executed.
+09:46:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+09:46:18 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+09:46:18 INFO  : Context for processor 'microblaze_0' is selected.
+09:46:19 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+09:46:19 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:46:19 INFO  : Context for processor 'microblaze_0' is selected.
+09:46:19 INFO  : System reset is completed.
+09:46:22 INFO  : 'after 3000' command is executed.
+09:46:22 INFO  : Context for processor 'microblaze_0' is selected.
+09:46:22 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+09:46:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+09:46:22 INFO  : Context for processor 'microblaze_0' is selected.
+09:46:22 INFO  : 'con' command is executed.
+09:46:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:46:22 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:21:17 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+12:21:43 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+12:21:43 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+12:21:46 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:21:51 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+12:21:51 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+12:21:51 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+12:21:51 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+12:21:56 INFO  : Disconnected from the channel tcfchan#15.
+12:21:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:21:57 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:21:57 INFO  : 'jtag frequency' command is executed.
+12:21:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:21:57 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:21:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:21:57 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:21:57 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:21:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:21:57 INFO  : System reset is completed.
+12:22:00 INFO  : 'after 3000' command is executed.
+12:22:00 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:01 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:22:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+12:22:01 INFO  : Context for processor 'microblaze_0' is selected.
+12:22:01 INFO  : 'con' command is executed.
+12:22:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:22:01 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:33:55 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+12:34:13 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+12:34:13 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+12:34:17 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:34:21 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+12:34:21 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+12:34:21 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+12:34:21 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+12:34:26 INFO  : Disconnected from the channel tcfchan#18.
+12:34:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:27 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:34:27 INFO  : 'jtag frequency' command is executed.
+12:34:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:34:27 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:27 ERROR : Exception occured while running Program FPGA.
+java.lang.RuntimeException: couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+12:34:27 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:35 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:34:35 INFO  : 'jtag frequency' command is executed.
+12:34:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:34:35 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:35 ERROR : Exception occured while running Program FPGA.
+java.lang.RuntimeException: couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+12:34:35 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:44 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:34:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:34:54 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:34:54 INFO  : 'jtag frequency' command is executed.
+12:34:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:34:54 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:54 ERROR : Exception occured while running Program FPGA.
+java.lang.RuntimeException: couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:34:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+12:34:54 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:35:13 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+12:35:39 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+12:35:39 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+12:35:42 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:35:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:35:49 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:35:49 INFO  : 'jtag frequency' command is executed.
+12:35:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:35:49 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:35:50 ERROR : Exception occured while running Program FPGA.
+java.lang.RuntimeException: couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:35:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+12:35:50 ERROR : couldn't open "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit": no such file or directory
+12:36:17 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+12:36:51 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+12:36:51 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+12:36:54 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:36:57 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+12:36:57 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+12:37:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:37:02 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:37:02 INFO  : 'jtag frequency' command is executed.
+12:37:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:37:03 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:37:03 INFO  : Context for processor 'microblaze_0' is selected.
+12:37:03 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:37:03 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:37:03 INFO  : Context for processor 'microblaze_0' is selected.
+12:37:03 INFO  : System reset is completed.
+12:37:06 INFO  : 'after 3000' command is executed.
+12:37:06 INFO  : Context for processor 'microblaze_0' is selected.
+12:37:06 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:37:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+12:37:06 INFO  : Context for processor 'microblaze_0' is selected.
+12:37:06 INFO  : 'con' command is executed.
+12:37:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:37:06 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:39:26 INFO  : Disconnected from the channel tcfchan#21.
+12:39:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:39:26 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:39:26 INFO  : 'jtag frequency' command is executed.
+12:39:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:39:26 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:39:26 INFO  : Context for processor 'microblaze_0' is selected.
+12:39:26 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:39:26 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:39:26 INFO  : Context for processor 'microblaze_0' is selected.
+12:39:26 INFO  : System reset is completed.
+12:39:29 INFO  : 'after 3000' command is executed.
+12:39:30 INFO  : Context for processor 'microblaze_0' is selected.
+12:39:30 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:39:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+12:39:30 INFO  : Context for processor 'microblaze_0' is selected.
+12:39:30 INFO  : 'con' command is executed.
+12:39:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:39:30 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:41:20 INFO  : Disconnected from the channel tcfchan#28.
+12:41:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:41:20 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:41:20 INFO  : 'jtag frequency' command is executed.
+12:41:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:41:21 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:41:21 INFO  : Context for processor 'microblaze_0' is selected.
+12:41:21 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:41:21 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:41:21 INFO  : Context for processor 'microblaze_0' is selected.
+12:41:21 INFO  : System reset is completed.
+12:41:24 INFO  : 'after 3000' command is executed.
+12:41:24 INFO  : Context for processor 'microblaze_0' is selected.
+12:41:24 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:41:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+12:41:25 INFO  : Context for processor 'microblaze_0' is selected.
+12:41:25 INFO  : 'con' command is executed.
+12:41:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:41:25 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:42:53 INFO  : Disconnected from the channel tcfchan#29.
+12:42:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:42:53 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:42:53 INFO  : 'jtag frequency' command is executed.
+12:42:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:42:54 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:42:54 INFO  : Context for processor 'microblaze_0' is selected.
+12:42:54 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:42:54 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:42:54 INFO  : Context for processor 'microblaze_0' is selected.
+12:42:54 INFO  : System reset is completed.
+12:42:57 INFO  : 'after 3000' command is executed.
+12:42:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:42:57 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:42:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Debug/quadInterface.elf
+----------------End of Script----------------
+
+12:42:57 INFO  : Context for processor 'microblaze_0' is selected.
+12:42:58 INFO  : 'con' command is executed.
+12:42:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:42:58 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+12:43:50 INFO  : Build configuration of system project is automatically updated to 'Release'.
+12:44:01 ERROR : Failed to openhw "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa"
+Reason: ERROR: [Common 17-39] 'hsi::open_hw_design' failed due to earlier errors.
+
+12:44:09 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+12:44:09 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+12:44:12 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+12:44:29 INFO  : Disconnected from the channel tcfchan#30.
+12:44:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:44:29 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+12:44:29 INFO  : 'jtag frequency' command is executed.
+12:44:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+12:44:30 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+12:44:30 INFO  : Context for processor 'microblaze_0' is selected.
+12:44:30 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+12:44:30 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+12:44:30 INFO  : Context for processor 'microblaze_0' is selected.
+12:44:30 INFO  : System reset is completed.
+12:44:33 INFO  : 'after 3000' command is executed.
+12:44:33 INFO  : Context for processor 'microblaze_0' is selected.
+12:44:33 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+12:44:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+12:44:33 INFO  : Context for processor 'microblaze_0' is selected.
+12:44:33 INFO  : 'con' command is executed.
+12:44:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+12:44:33 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+16:18:17 INFO  : Disconnected from the channel tcfchan#34.
+16:18:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:18:17 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+16:18:17 INFO  : 'jtag frequency' command is executed.
+16:18:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+16:18:18 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+16:18:18 INFO  : Context for processor 'microblaze_0' is selected.
+16:18:18 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+16:18:18 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:18:18 INFO  : Context for processor 'microblaze_0' is selected.
+16:18:18 INFO  : System reset is completed.
+16:18:21 INFO  : 'after 3000' command is executed.
+16:18:21 INFO  : Context for processor 'microblaze_0' is selected.
+16:18:21 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+16:18:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+16:18:21 INFO  : Context for processor 'microblaze_0' is selected.
+16:18:22 INFO  : 'con' command is executed.
+16:18:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:18:22 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+16:57:45 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+16:58:07 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+16:58:07 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+16:58:10 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+16:58:15 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+16:58:15 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+16:58:15 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+16:58:15 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+16:58:39 INFO  : Disconnected from the channel tcfchan#35.
+16:58:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:58:39 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+16:58:39 INFO  : 'jtag frequency' command is executed.
+16:58:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+16:58:39 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+16:58:39 INFO  : Context for processor 'microblaze_0' is selected.
+16:58:40 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+16:58:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+16:58:40 INFO  : Context for processor 'microblaze_0' is selected.
+16:58:40 INFO  : System reset is completed.
+16:58:43 INFO  : 'after 3000' command is executed.
+16:58:43 INFO  : Context for processor 'microblaze_0' is selected.
+16:58:43 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+16:58:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+16:58:43 INFO  : Context for processor 'microblaze_0' is selected.
+16:58:43 INFO  : 'con' command is executed.
+16:58:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+16:58:43 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+18:30:12 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+18:31:28 INFO  : Hardware specification for platform project 'axisDMAPlatform_FreeRTOS' is updated.
+18:31:50 INFO  : Result from executing command 'getProjects': axisDMAPlatform_FreeRTOS
+18:31:50 INFO  : Result from executing command 'getPlatforms': axisDMAPlatform_FreeRTOS|/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/axisDMAPlatform_FreeRTOS.xpfm
+18:31:53 INFO  : Checking for BSP changes to sync application flags for project 'quadInterface'...
+18:31:58 INFO  : The hardware specfication used by project 'quadInterface' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+18:31:58 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit' stored in project is removed.
+18:31:58 INFO  : The file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.mmi' stored in project is removed.
+18:31:58 INFO  : The updated bitstream files are copied from platform to folder '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream' in project 'quadInterface'.
+18:32:08 INFO  : Disconnected from the channel tcfchan#39.
+18:32:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:32:08 INFO  : Jtag cable 'Digilent Cmod S7 210376AC72F9A' is selected.
+18:32:08 INFO  : 'jtag frequency' command is executed.
+18:32:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}' command is executed.
+18:32:09 INFO  : FPGA configured successfully with bitstream "/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit"
+18:32:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:32:09 INFO  : Hardware design and registers information is loaded from '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa'.
+18:32:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:32:09 INFO  : Context for processor 'microblaze_0' is selected.
+18:32:09 INFO  : System reset is completed.
+18:32:12 INFO  : 'after 3000' command is executed.
+18:32:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:32:12 INFO  : The application '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf' is downloaded to processor 'microblaze_0'.
+18:32:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Cmod S7 210376AC72F9A" && level==0 && jtag_device_ctx=="jsn-Cmod S7-210376AC72F9A-037c4093-0"}
+fpga -file /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/_ide/bitstream/axis_dma_design_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/axisDMAPlatform_FreeRTOS/export/axisDMAPlatform_FreeRTOS/hw/axis_dma_design_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadInterface/Release/quadInterface.elf
+----------------End of Script----------------
+
+18:32:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:32:12 INFO  : 'con' command is executed.
+18:32:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:32:12 INFO  : Launch script is exported to file '/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/.sdk/launch_scripts/single_application_debug/systemdebugger_quadinterface_system_standalone.tcl'
+19:25:42 INFO  : Disconnected from the channel tcfchan#44.

@@ -51,7 +51,7 @@ static TimerHandle_t xTimer = NULL;
 
 static void dhotMotorUpdate(uint8_t motor, uint16_t value);
 static void boardLEDUpdate(boardLEDOperation operation, uint16_t led);
-static basicProtocol gProtocol;
+static basicProtocol gProtocol(basicProtocol::CRC_ESC_OFFLOAD_TX_DMA);
 static pingProtocolServer gPingServer(gProtocol);
 static boardLEDProtocolServer ledBoardServer(gProtocol);
 static dshotProtocolServer dshotServer(gProtocol);
@@ -81,7 +81,26 @@ static void callConstructors()
 }
 
 
+uint8_t *DMA_TX_AllocWrapper( size_t len, int &errNo)
+{
+	errNo = 0;
+	uint8_t *pPktTx = nullptr;
+	if (allocTx(pPktTx, len))
+	{
+		return pPktTx;
+	}
+	else
+	{
+		return nullptr;
+	}
+}
 
+bool tx_DMAbasicProtocol(uint8_t *pPkt, size_t len, basicProtocol::PktState_t state)
+{
+	(void)state;
+
+	return wait_tx_pkt(pPkt, len);
+}
 
 bool tx_basicProtocol(uint8_t *pPkt, size_t len, basicProtocol::PktState_t state)
 {
@@ -142,8 +161,12 @@ bool tx_basicProtocol(uint8_t *pPkt, size_t len, basicProtocol::PktState_t state
 bool connectFastSerialTx()
 {
 	basicProtocol::txPacket_t del;
-	del.set(tx_basicProtocol);
+	del.set(/*tx_basicProtocol*/tx_DMAbasicProtocol);
 	gProtocol.registerTx(del);
+
+	basicProtocol::allocTXPacket_t alloc_del;
+	alloc_del.set(DMA_TX_AllocWrapper);
+	gProtocol.attachDMAAllocate(alloc_del);
 
 	boardLEDProtocolServer::postLEDUpdateCallback_t delLEDCallback;
 	delLEDCallback.set(boardLEDUpdate);
@@ -192,7 +215,7 @@ int main( void )
 #endif
 	if ( pdPASS != xTaskCreate( prvRxTask,
 				 ( const char * ) "GB",
-				 2048,
+				 1024,
 				 NULL,
 				 tskIDLE_PRIORITY + 1,
 				 &xRxTask ))

@@ -14039,7 +14039,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a42dd926</spirit:value>
+            <spirit:value>9:80579a02</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14053,11 +14053,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 22 20:55:52 UTC 2020</spirit:value>
+            <spirit:value>Fri Aug 28 02:34:52 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a42dd926</spirit:value>
+            <spirit:value>9:80579a02</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14073,11 +14073,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 22 20:55:52 UTC 2020</spirit:value>
+            <spirit:value>Fri Aug 28 02:34:52 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a42dd926</spirit:value>
+            <spirit:value>9:80579a02</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14097,7 +14097,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a719329b</spirit:value>
+            <spirit:value>9:7aa47c05</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14113,11 +14113,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 22 20:55:52 UTC 2020</spirit:value>
+            <spirit:value>Fri Aug 28 02:34:52 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a719329b</spirit:value>
+            <spirit:value>9:7aa47c05</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14131,11 +14131,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Aug 22 20:58:35 UTC 2020</spirit:value>
+            <spirit:value>Fri Aug 28 02:36:56 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a42dd926</spirit:value>
+            <spirit:value>9:80579a02</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -17166,7 +17166,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_In" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_In" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -17193,7 +17193,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Ack_In" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Ack_In" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -17220,7 +17220,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Out" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Out" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -17244,7 +17244,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Ack_Out" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.Dbg_Trig_Ack_Out" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_ENABLED&apos;)) > 1) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) and (spirit:decode(id(&apos;PARAM_VALUE.C_LOCKSTEP_SELECT&apos;)) &lt; 2) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) &lt; 2))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -24735,7 +24735,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_ENABLED</spirit:name>
         <spirit:displayName>MicroBlaze Debug Module Interface</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_ENABLED" spirit:choiceRef="choice_pairs_7bfd418d">2</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_ENABLED" spirit:choiceRef="choice_pairs_7bfd418d">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_INTERFACE</spirit:name>
@@ -24745,7 +24745,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUMBER_OF_PC_BRK</spirit:name>
         <spirit:displayName>Number of PC Breakpoints</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUMBER_OF_PC_BRK" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUMBER_OF_PC_BRK" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_NUMBER_OF_RD_ADDR_BRK</spirit:name>
@@ -24765,7 +24765,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_LATENCY_COUNTERS</spirit:name>
         <spirit:displayName>Number of Performance Monitor Latency Counters</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_LATENCY_COUNTERS" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">4</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_LATENCY_COUNTERS" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_COUNTER_WIDTH</spirit:name>
@@ -24790,7 +24790,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_DEBUG_PROFILE_SIZE</spirit:name>
         <spirit:displayName>Profile Buffer Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_PROFILE_SIZE" spirit:choiceRef="choice_pairs_5b1842a1">4096</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_DEBUG_PROFILE_SIZE" spirit:choiceRef="choice_pairs_5b1842a1">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INTERRUPT_IS_EDGE</spirit:name>
@@ -26476,7 +26476,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_DEBUG_ENABLED</spirit:name>
       <spirit:displayName>MicroBlaze Debug Module Interface</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_ENABLED" spirit:choiceRef="choice_pairs_7bfd418d" spirit:order="5000" spirit:configGroups="5 Hardware Breakpoints">2</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_ENABLED" spirit:choiceRef="choice_pairs_7bfd418d" spirit:order="5000" spirit:configGroups="5 Hardware Breakpoints">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -26500,7 +26500,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_NUMBER_OF_PC_BRK</spirit:name>
       <spirit:displayName>Number of PC Breakpoints</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUMBER_OF_PC_BRK" spirit:order="5100" spirit:configGroups="5 Hardware Breakpoints" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUMBER_OF_PC_BRK" spirit:order="5100" spirit:configGroups="5 Hardware Breakpoints" spirit:minimum="0" spirit:maximum="8" spirit:rangeType="long">2</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -26540,7 +26540,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_EVENT_COUNTERS">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_EVENT_COUNTERS">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -26548,11 +26548,11 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_DEBUG_LATENCY_COUNTERS</spirit:name>
       <spirit:displayName>Number of Performance Monitor Latency Counters</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_LATENCY_COUNTERS" spirit:order="5500" spirit:configGroups="5 Hardware Breakpoints" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">4</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_LATENCY_COUNTERS" spirit:order="5500" spirit:configGroups="5 Hardware Breakpoints" spirit:minimum="0" spirit:maximum="7" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_LATENCY_COUNTERS">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_LATENCY_COUNTERS">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -26564,7 +26564,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_COUNTER_WIDTH">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_COUNTER_WIDTH">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -26576,7 +26576,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_TRACE_SIZE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_TRACE_SIZE">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -26588,7 +26588,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_EXTERNAL_TRACE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_EXTERNAL_TRACE">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -26608,11 +26608,11 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_DEBUG_PROFILE_SIZE</spirit:name>
       <spirit:displayName>Profile Buffer Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_PROFILE_SIZE" spirit:choiceRef="choice_pairs_5b1842a1" spirit:order="5800" spirit:configGroups="5 Hardware Breakpoints">4096</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DEBUG_PROFILE_SIZE" spirit:choiceRef="choice_pairs_5b1842a1" spirit:order="5800" spirit:configGroups="5 Hardware Breakpoints">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_PROFILE_SIZE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DEBUG_PROFILE_SIZE">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>

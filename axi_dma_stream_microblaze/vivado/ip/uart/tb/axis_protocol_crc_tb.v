@@ -6,7 +6,7 @@
 // It sends out byte 0x37, and ensures the RX receives it correctly.
 `timescale 1ns/10ps
 
-`include "axis_tx_protocol_crc.v"
+`include "../rtl/axis_tx_protocol_crc.v"
 
 module axis_protocol_crc_tb();
 

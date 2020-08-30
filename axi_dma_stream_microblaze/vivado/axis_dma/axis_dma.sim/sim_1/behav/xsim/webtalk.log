@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Aug 27 23:23:12 2020
+# Process ID: 1049502
+# Current directory: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/xsim.dir/axis_protocol_crc_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.sim/sim_1/behav/xsim/xsim.dir/axis_protocol_crc_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Aug 27 23:23:12 2020...

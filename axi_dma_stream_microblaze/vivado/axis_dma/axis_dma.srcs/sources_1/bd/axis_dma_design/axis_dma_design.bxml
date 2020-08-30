@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="axis_dma_design" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1598200879"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1598200879"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1598200879"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1598200879"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1598743452"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1598743452"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1598743452"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1598743452"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/axis_dma_design_clk_wiz_0_0/axis_dma_design_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -64,6 +64,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/axis_dma_design_microblaze_0_axi_periph_0/axis_dma_design_microblaze_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -182,17 +183,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth/axis_dma_design.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-      </File>
-      <File Name="sim/axis_dma_design.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/axis_dma_design_dshot_axi_0_0/axis_dma_design_dshot_axi_0_0.xci" Type="IP">
         <Instance HierarchyPath="dshot_axi_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -215,6 +205,33 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/axis_dma_design_axis_tx_protocol_crc_0_0/axis_dma_design_axis_tx_protocol_crc_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axis_tx_protocol_crc_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/axis_dma_design_axis_tx_esc_protocol_0_1/axis_dma_design_axis_tx_esc_protocol_0_1.xci" Type="IP">
+        <Instance HierarchyPath="axis_tx_esc_protocol_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth/axis_dma_design.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim/axis_dma_design.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/axis_dma_design_auto_pc_7/axis_dma_design_auto_pc_7.xci" Type="IP">

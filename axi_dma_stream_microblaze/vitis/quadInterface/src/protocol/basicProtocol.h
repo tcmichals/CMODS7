@@ -482,7 +482,6 @@ inline bool basicProtocol::onRecv(uint8_t *pRx, size_t lenOfBytes)
 			switch (*pRx)
 			{
 			case PACKET_SOP:
-			
 				m_rxState = rxState_t::WAIT_SOP;
 				break;
 
@@ -517,9 +516,7 @@ inline bool basicProtocol::onRecv(uint8_t *pRx, size_t lenOfBytes)
 
 		pRx++;
 		lenOfBytes--;
-
 	} while (lenOfBytes);
-
 	return rc;
 }
 

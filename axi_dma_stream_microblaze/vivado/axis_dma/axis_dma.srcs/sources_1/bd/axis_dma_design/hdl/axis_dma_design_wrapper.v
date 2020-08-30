@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-//Date        : Sun Aug 23 11:41:18 2020
+//Date        : Sat Aug 29 18:24:10 2020
 //Host        : hp running 64-bit Ubuntu 20.04.1 LTS
 //Command     : generate_target axis_dma_design_wrapper.bd
 //Design      : axis_dma_design_wrapper

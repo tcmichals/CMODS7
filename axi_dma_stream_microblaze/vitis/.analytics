@@ -574,3 +574,153 @@ timestamp=[2020-08-22 18:12:59], mode=BUILD, duration=0:00:00.519, duration_ms=5
 timestamp=[2020-08-22 18:13:10], mode=PLATFORM_GENERATION, duration=0:00:11.052, duration_ms=11052, data={name=axisDMAPlatform_FreeRTOS}
 timestamp=[2020-08-22 18:13:12], mode=BUILD, duration=0:00:01.734, duration_ms=1734, data={name=quadInterface, configuration=Release, clean_build=false}
 timestamp=[2020-08-22 18:13:14], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=quadInterface_system, configuration=Release, clean_build=false}
+timestamp=[2020-08-27 21:14:18], mode=WORKBENCH_START, duration=0:00:39.535, duration_ms=39535, data={}
+timestamp=[2020-08-27 21:14:19], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.052, duration_ms=52, data={}
+timestamp=[2020-08-27 21:14:20], mode=WORKBENCH_UI_INIT, duration=0:00:01.862, duration_ms=1862, data={editors_count=23, platform_editors_count=12, projects_count=11, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,axisDMAPlatformFreeRTOS,axisDMAPlatform_FreeRTOS,axisDMA_App_FreeRTOS,axisDMA_App_FreeRTOS_system,axisPlatForm_FreeRTOS,axis_dma_example,axis_dma_example_system,axis_freertos,quadInterface,quadInterface_system}
+timestamp=[2020-08-27 21:31:45], mode=PLATFORM_GENERATION, duration=0:00:14.613, duration_ms=14613, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 21:31:46], mode=BUILD, duration=0:00:00.951, duration_ms=951, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-27 21:31:46], mode=BUILD, duration=0:00:00.842, duration_ms=842, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-27 21:32:09], mode=PLATFORM_GENERATION, duration=0:00:21.160, duration_ms=21160, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 21:32:18], mode=BUILD, duration=0:00:08.471, duration_ms=8471, data={name=quadInterface, configuration=Release, clean_build=false}
+timestamp=[2020-08-27 21:32:21], mode=BUILD, duration=0:00:00.827, duration_ms=827, data={name=quadInterface_system, configuration=Release, clean_build=false}
+timestamp=[2020-08-27 21:46:45], mode=PLATFORM_GENERATION, duration=0:00:11.456, duration_ms=11456, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 21:46:46], mode=BUILD, duration=0:00:00.871, duration_ms=871, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-27 21:46:47], mode=BUILD, duration=0:00:00.858, duration_ms=858, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-27 21:47:23], mode=PLATFORM_GENERATION, duration=0:00:35.697, duration_ms=35697, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 21:47:29], mode=BUILD, duration=0:00:05.264, duration_ms=5264, data={name=quadInterface, configuration=Release, clean_build=false}
+timestamp=[2020-08-27 21:47:31], mode=BUILD, duration=0:00:00.645, duration_ms=645, data={name=quadInterface_system, configuration=Release, clean_build=false}
+timestamp=[2020-08-27 22:18:06], mode=PLATFORM_GENERATION, duration=0:00:06.900, duration_ms=6900, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 22:18:06], mode=BUILD, duration=0:00:00.585, duration_ms=585, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 22:18:10], mode=BUILD, duration=0:00:03.874, duration_ms=3874, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:18:12], mode=BUILD, duration=0:00:00.571, duration_ms=571, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 22:18:12], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:31:10], mode=BUILD, duration=0:00:00.832, duration_ms=832, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:31:11], mode=BUILD, duration=0:00:00.523, duration_ms=523, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:34:23], mode=BUILD, duration=0:00:01.092, duration_ms=1092, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:34:24], mode=BUILD, duration=0:00:00.533, duration_ms=533, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:34:45], mode=PLATFORM_GENERATION, duration=0:00:05.560, duration_ms=5560, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 22:34:46], mode=BUILD, duration=0:00:00.584, duration_ms=584, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 22:34:46], mode=BUILD, duration=0:00:00.527, duration_ms=527, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 22:35:01], mode=PLATFORM_GENERATION, duration=0:00:10.978, duration_ms=10978, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 22:35:02], mode=BUILD, duration=0:00:01.481, duration_ms=1481, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:35:04], mode=BUILD, duration=0:00:00.518, duration_ms=518, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:36:54], mode=PLATFORM_GENERATION, duration=0:00:10.615, duration_ms=10615, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 22:36:56], mode=BUILD, duration=0:00:01.642, duration_ms=1642, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:36:58], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:37:18], mode=BUILD, duration=0:00:01.024, duration_ms=1024, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 22:37:19], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:05:35], mode=PLATFORM_GENERATION, duration=0:00:10.009, duration_ms=10009, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:05:36], mode=BUILD, duration=0:00:00.575, duration_ms=575, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:05:37], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:05:49], mode=PLATFORM_GENERATION, duration=0:00:12.813, duration_ms=12813, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:05:53], mode=BUILD, duration=0:00:03.082, duration_ms=3082, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:05:55], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:26:37], mode=PLATFORM_GENERATION, duration=0:00:06.873, duration_ms=6873, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:26:37], mode=BUILD, duration=0:00:00.529, duration_ms=529, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:26:38], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:26:50], mode=PLATFORM_GENERATION, duration=0:00:12.286, duration_ms=12286, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:26:54], mode=BUILD, duration=0:00:03.196, duration_ms=3196, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:26:56], mode=BUILD, duration=0:00:00.520, duration_ms=520, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:30:18], mode=PLATFORM_GENERATION, duration=0:00:05.512, duration_ms=5512, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:30:19], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:30:20], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-27 23:30:30], mode=PLATFORM_GENERATION, duration=0:00:10.410, duration_ms=10410, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-27 23:30:32], mode=BUILD, duration=0:00:01.527, duration_ms=1527, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-27 23:30:34], mode=BUILD, duration=0:00:00.531, duration_ms=531, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-28 00:05:24], mode=PLATFORM_GENERATION, duration=0:00:07.843, duration_ms=7843, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-28 00:05:24], mode=BUILD, duration=0:00:00.572, duration_ms=572, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-28 00:05:25], mode=BUILD, duration=0:00:00.575, duration_ms=575, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-28 00:05:43], mode=PLATFORM_GENERATION, duration=0:00:11.866, duration_ms=11866, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-28 00:05:47], mode=BUILD, duration=0:00:02.836, duration_ms=2836, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-28 00:05:48], mode=BUILD, duration=0:00:00.530, duration_ms=530, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 08:22:37], mode=WORKBENCH_START, duration=0:00:42.461, duration_ms=42461, data={}
+timestamp=[2020-08-29 08:22:38], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.044, duration_ms=44, data={}
+timestamp=[2020-08-29 08:22:39], mode=WORKBENCH_UI_INIT, duration=0:00:01.786, duration_ms=1786, data={editors_count=4, platform_editors_count=1, projects_count=11, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,axisDMAPlatformFreeRTOS,axisDMAPlatform_FreeRTOS,axisDMA_App_FreeRTOS,axisDMA_App_FreeRTOS_system,axisPlatForm_FreeRTOS,axis_dma_example,axis_dma_example_system,axis_freertos,quadInterface,quadInterface_system}
+timestamp=[2020-08-29 08:52:24], mode=PLATFORM_GENERATION, duration=0:00:05.700, duration_ms=5700, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 08:52:25], mode=BUILD, duration=0:00:00.534, duration_ms=534, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 08:52:25], mode=BUILD, duration=0:00:00.585, duration_ms=585, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 08:52:44], mode=PLATFORM_GENERATION, duration=0:00:14.554, duration_ms=14554, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 08:52:48], mode=BUILD, duration=0:00:02.998, duration_ms=2998, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 08:52:50], mode=BUILD, duration=0:00:00.554, duration_ms=554, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 08:54:03], mode=PLATFORM_GENERATION, duration=0:00:05.496, duration_ms=5496, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 08:54:08], mode=PLATFORM_GENERATION, duration=0:00:05.519, duration_ms=5519, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 08:54:09], mode=BUILD, duration=0:00:00.525, duration_ms=525, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 08:54:09], mode=BUILD, duration=0:00:00.530, duration_ms=530, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 08:54:19], mode=PLATFORM_GENERATION, duration=0:00:10.179, duration_ms=10179, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 08:54:20], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 08:54:22], mode=BUILD, duration=0:00:01.887, duration_ms=1887, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 08:54:24], mode=BUILD, duration=0:00:00.518, duration_ms=518, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:12:48], mode=PLATFORM_GENERATION, duration=0:00:06.990, duration_ms=6990, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:12:53], mode=PLATFORM_GENERATION, duration=0:00:05.543, duration_ms=5543, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:12:54], mode=BUILD, duration=0:00:00.574, duration_ms=574, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 09:12:54], mode=BUILD, duration=0:00:00.523, duration_ms=523, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 09:13:07], mode=PLATFORM_GENERATION, duration=0:00:12.620, duration_ms=12620, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:13:11], mode=BUILD, duration=0:00:03.437, duration_ms=3437, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:13:13], mode=BUILD, duration=0:00:00.522, duration_ms=522, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:45:17], mode=PLATFORM_GENERATION, duration=0:00:11.162, duration_ms=11162, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:45:32], mode=PLATFORM_GENERATION, duration=0:00:14.269, duration_ms=14269, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:45:36], mode=BUILD, duration=0:00:03.235, duration_ms=3235, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:45:37], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:45:44], mode=PLATFORM_GENERATION, duration=0:00:05.988, duration_ms=5988, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:45:44], mode=BUILD, duration=0:00:00.571, duration_ms=571, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 09:45:45], mode=BUILD, duration=0:00:00.534, duration_ms=534, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 09:46:10], mode=PLATFORM_GENERATION, duration=0:00:11.802, duration_ms=11802, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 09:46:12], mode=BUILD, duration=0:00:02.000, duration_ms=2000, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 09:46:14], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:21:33], mode=PLATFORM_GENERATION, duration=0:00:09.619, duration_ms=9619, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:21:33], mode=BUILD, duration=0:00:00.549, duration_ms=549, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:21:34], mode=BUILD, duration=0:00:00.540, duration_ms=540, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:21:46], mode=PLATFORM_GENERATION, duration=0:00:12.060, duration_ms=12060, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:21:50], mode=BUILD, duration=0:00:03.281, duration_ms=3281, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:21:51], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:27:33], mode=PLATFORM_GENERATION, duration=0:00:05.550, duration_ms=5550, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:27:33], mode=BUILD, duration=0:00:00.520, duration_ms=520, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:27:34], mode=BUILD, duration=0:00:00.517, duration_ms=517, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:34:17], mode=PLATFORM_GENERATION, duration=0:00:15.507, duration_ms=15507, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:34:20], mode=BUILD, duration=0:00:03.255, duration_ms=3255, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:34:21], mode=BUILD, duration=0:00:00.524, duration_ms=524, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:34:44], mode=BUILD, duration=0:00:00.537, duration_ms=537, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:34:46], mode=BUILD, duration=0:00:01.530, duration_ms=1530, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:34:47], mode=BUILD, duration=0:00:00.518, duration_ms=518, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:35:24], mode=PLATFORM_GENERATION, duration=0:00:05.533, duration_ms=5533, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:35:29], mode=PLATFORM_GENERATION, duration=0:00:05.470, duration_ms=5470, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:35:30], mode=BUILD, duration=0:00:00.540, duration_ms=540, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:35:30], mode=BUILD, duration=0:00:00.520, duration_ms=520, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:35:42], mode=PLATFORM_GENERATION, duration=0:00:10.385, duration_ms=10385, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:35:44], mode=BUILD, duration=0:00:01.727, duration_ms=1727, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:35:46], mode=BUILD, duration=0:00:00.520, duration_ms=520, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:36:29], mode=PLATFORM_GENERATION, duration=0:00:06.062, duration_ms=6062, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:36:29], mode=BUILD, duration=0:00:00.528, duration_ms=528, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:36:30], mode=BUILD, duration=0:00:00.532, duration_ms=532, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:36:36], mode=PLATFORM_GENERATION, duration=0:00:05.503, duration_ms=5503, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:36:54], mode=PLATFORM_GENERATION, duration=0:00:18.440, duration_ms=18440, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:36:56], mode=BUILD, duration=0:00:01.629, duration_ms=1629, data={name=quadInterface, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:36:58], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface_system, configuration=Debug, clean_build=false}
+timestamp=[2020-08-29 12:43:43], mode=PLATFORM_GENERATION, duration=0:00:05.590, duration_ms=5590, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:43:43], mode=BUILD, duration=0:00:00.519, duration_ms=519, data={name=quadInterface, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:43:44], mode=BUILD, duration=0:00:00.518, duration_ms=518, data={name=quadInterface_system, configuration=Debug, clean_build=true}
+timestamp=[2020-08-29 12:43:59], mode=PLATFORM_GENERATION, duration=0:00:05.687, duration_ms=5687, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:44:00], mode=BUILD, duration=0:00:00.527, duration_ms=527, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 12:44:00], mode=BUILD, duration=0:00:00.526, duration_ms=526, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 12:44:12], mode=PLATFORM_GENERATION, duration=0:00:11.296, duration_ms=11296, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 12:44:12], mode=BUILD, duration=0:00:00.527, duration_ms=527, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 12:44:14], mode=BUILD, duration=0:00:01.713, duration_ms=1713, data={name=quadInterface, configuration=Release, clean_build=false}
+timestamp=[2020-08-29 12:44:16], mode=BUILD, duration=0:00:00.521, duration_ms=521, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 12:44:17], mode=BUILD, duration=0:00:00.520, duration_ms=520, data={name=quadInterface_system, configuration=Release, clean_build=false}
+timestamp=[2020-08-29 16:50:35], mode=PLATFORM_GENERATION, duration=0:00:06.106, duration_ms=6106, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 16:50:41], mode=PLATFORM_GENERATION, duration=0:00:05.653, duration_ms=5653, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 16:50:41], mode=BUILD, duration=0:00:00.591, duration_ms=591, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 16:50:42], mode=BUILD, duration=0:00:00.584, duration_ms=584, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 16:58:10], mode=PLATFORM_GENERATION, duration=0:00:17.762, duration_ms=17762, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 16:58:14], mode=BUILD, duration=0:00:03.330, duration_ms=3330, data={name=quadInterface, configuration=Release, clean_build=false}
+timestamp=[2020-08-29 16:58:16], mode=BUILD, duration=0:00:00.522, duration_ms=522, data={name=quadInterface_system, configuration=Release, clean_build=false}
+timestamp=[2020-08-29 18:30:28], mode=PLATFORM_GENERATION, duration=0:00:10.947, duration_ms=10947, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 18:30:34], mode=PLATFORM_GENERATION, duration=0:00:05.650, duration_ms=5650, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 18:30:34], mode=BUILD, duration=0:00:00.574, duration_ms=574, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 18:30:35], mode=BUILD, duration=0:00:00.576, duration_ms=576, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 18:31:40], mode=PLATFORM_GENERATION, duration=0:00:05.692, duration_ms=5692, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 18:31:40], mode=BUILD, duration=0:00:00.523, duration_ms=523, data={name=quadInterface, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 18:31:41], mode=BUILD, duration=0:00:00.522, duration_ms=522, data={name=quadInterface_system, configuration=Release, clean_build=true}
+timestamp=[2020-08-29 18:31:53], mode=PLATFORM_GENERATION, duration=0:00:12.624, duration_ms=12624, data={name=axisDMAPlatform_FreeRTOS}
+timestamp=[2020-08-29 18:31:57], mode=BUILD, duration=0:00:03.152, duration_ms=3152, data={name=quadInterface, configuration=Release, clean_build=false}
+timestamp=[2020-08-29 18:31:59], mode=BUILD, duration=0:00:00.571, duration_ms=571, data={name=quadInterface_system, configuration=Release, clean_build=false}

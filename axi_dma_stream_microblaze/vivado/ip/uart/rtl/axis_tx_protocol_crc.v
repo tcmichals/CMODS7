@@ -54,7 +54,7 @@ always @(posedge axis_aclk) begin
             end
 
         ready_state: begin
-            if (s_axis_tvalid) begin
+            if (s_axis_tvalid & m_axis_tready ) begin
                 curr_crc <= crc_out;
                 if (s_axis_tlast) begin
                     crc_data <= crc_out[15:8];

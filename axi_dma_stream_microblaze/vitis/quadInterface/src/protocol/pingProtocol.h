@@ -144,10 +144,10 @@ inline bool pingProtocolClient::postFromBasicProtocol(uint8_t from_port, uint8_t
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end-m_start;
     double bites_per_sec = (sizeof(pingPayload_t) / diff.count() * 8)/ 1000000;
-    std::cout << "Index: " << pPingPayLoad->m_index << " time:" << diff.count() * 1000 << "ms " << bites_per_sec <<   " Mbps" << "\r";
+    std::cout << "Index: " << pPingPayLoad->m_index << " time:" << diff.count() * 1000 << "ms " << bites_per_sec <<   " Mbps" << '\r';
     
     
-    return false;
+    return true;
 }
 
 inline bool pingProtocolClient::startPing()
