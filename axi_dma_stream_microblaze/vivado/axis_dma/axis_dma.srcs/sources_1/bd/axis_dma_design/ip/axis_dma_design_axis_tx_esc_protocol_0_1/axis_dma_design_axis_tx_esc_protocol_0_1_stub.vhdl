@@ -1,8 +1,8 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
--- Date        : Sat Aug 29 16:51:42 2020
--- Host        : hp running 64-bit Ubuntu 20.04.1 LTS
+-- Date        : Wed Sep  2 10:28:02 2020
+-- Host        : VERITY-1171 running 64-bit Ubuntu 20.04.1 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.srcs/sources_1/bd/axis_dma_design/ip/axis_dma_design_axis_tx_esc_protocol_0_1/axis_dma_design_axis_tx_esc_protocol_0_1_stub.vhdl
 -- Design      : axis_dma_design_axis_tx_esc_protocol_0_1

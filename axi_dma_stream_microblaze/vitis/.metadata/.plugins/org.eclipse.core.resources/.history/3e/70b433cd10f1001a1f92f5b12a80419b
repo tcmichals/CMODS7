@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="quadcopterHWInterface" location="/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/quadcopterHWInterface" platform="/media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vitis/freeRTOS_Platform/export/freeRTOS_Platform/freeRTOS_Platform.xpfm" platformUID="xilinx:cmod-s7-25::0.0(custom)" systemProject="quadcopterHWInterface_system" sysConfig="freeRTOS_Platform" runtime="C/C++" cpu="freertos10_xilinx_domain" cpuInstance="microblaze_0" os="freertos10_xilinx" language="CPP" mssSignature="808dc8ad0ff3c62b4e4f2db42b26f21a">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1808545908">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1874290309">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

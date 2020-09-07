@@ -24,8 +24,6 @@ localparam MEASURING_ON = 2'b1;
 localparam MEASURING_OFF = 2'b0;
 localparam MEASURE_COMPLETE = 2'b10;
 
-
-
 localparam NO_ERROR = 16'h0;
 localparam GUARD_TIME_ON_MAX = 16'd2600; 
 localparam GUARD_TIME_ON_MIN = 16'd800;

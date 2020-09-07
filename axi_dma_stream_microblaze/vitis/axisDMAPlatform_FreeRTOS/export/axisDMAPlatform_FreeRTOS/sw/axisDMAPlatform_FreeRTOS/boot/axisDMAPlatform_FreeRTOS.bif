@@ -1,6 +1,0 @@
-/*axisDMAPlatform_FreeRTOS*/
-the_ROM_image:
-{
-   <bitstream> 
-   <elf> 
-}

@@ -1,129 +1,0 @@
-2020-08-29T18:31:41.36492800255-18:31:41 **** Build of project axisDMAPlatform_FreeRTOS ****
-000-buildplatform.sh 42011 axisDMAPlatform_FreeRTOS  
-000-XSDB Server Channel: tcfchan#43
-000-Building the BSP Library for domain  - freertos10_xilinx_domain on processor microblaze_0
-000-Running Make include in microblaze_0/libsrc/gpio_v4_6/src
-000-
-000-make -C microblaze_0/libsrc/gpio_v4_6/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
-000-PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patter
-000-n-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/axidma_v9_11/src
-000-
-000-make -C microblaze_0/libsrc/axidma_v9_11/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "
-000-COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pat
-000-tern-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/tmrctr_v4_6/src
-000-
-000-make -C microblaze_0/libsrc/tmrctr_v4_6/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
-000-OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patt
-000-ern-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/cpu_v2_11/src
-000-
-000-make -C microblaze_0/libsrc/cpu_v2_11/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
-000-PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patter
-000-n-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/intc_v3_11/src
-000-
-000-make -C microblaze_0/libsrc/intc_v3_11/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "CO
-000-MPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patte
-000-rn-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/uartlite_v3_4/src
-000-
-000-make -C microblaze_0/libsrc/uartlite_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" 
-000-"COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pa
-000-ttern-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/bram_v4_4/src
-000-
-000-make -C microblaze_0/libsrc/bram_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
-000-PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patter
-000-n-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Running Make include in microblaze_0/libsrc/freertos10_xilinx_v1_6/src
-000-
-000-make -C microblaze_0/libsrc/freertos10_xilinx_v1_6/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVE
-000-R=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequenc
-000-y -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-include
-000-
-000-Running Make libs in microblaze_0/libsrc/gpio_v4_6/src
-000-
-000-make -C microblaze_0/libsrc/gpio_v4_6/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
-000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pattern-c
-000-ompare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling gpio
-000-
-000-/home/tcmichals/hdisk/Xilinx/Vitis/2020.1/gnu/microblaze/lin/bin/../x86_64-oesdk-linux/usr/bin/microblaze-xilinx-elf/microblaze-xilinx-elf-ar.real: creating ../../../lib/libxil.a
-000-Running Make libs in microblaze_0/libsrc/axidma_v9_11/src
-000-
-000-make -C microblaze_0/libsrc/axidma_v9_11/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
-000-PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patter
-000-n-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling axidma
-000-
-000-Running Make libs in microblaze_0/libsrc/tmrctr_v4_6/src
-000-
-000-make -C microblaze_0/libsrc/tmrctr_v4_6/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
-000-ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pattern
-000--compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling tmrctr
-000-
-000-Running Make libs in microblaze_0/libsrc/cpu_v2_11/src
-000-
-000-make -C microblaze_0/libsrc/cpu_v2_11/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
-000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pattern-c
-000-ompare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling cpu
-000-
-000-Running Make libs in microblaze_0/libsrc/intc_v3_11/src
-000-
-000-make -C microblaze_0/libsrc/intc_v3_11/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
-000-LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pattern-
-000-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling intc
-000-
-000-Running Make libs in microblaze_0/libsrc/uartlite_v3_4/src
-000-
-000-make -C microblaze_0/libsrc/uartlite_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "CO
-000-MPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-patte
-000-rn-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling uartlite
-000-
-000-Running Make libs in microblaze_0/libsrc/bram_v4_4/src
-000-
-000-make -C microblaze_0/libsrc/bram_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
-000-ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -mxl-pattern-c
-000-ompare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling bram
-000-
-000-Running Make libs in microblaze_0/libsrc/freertos10_xilinx_v1_6/src
-000-
-000-make -C microblaze_0/libsrc/freertos10_xilinx_v1_6/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=m
-000-b-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-frequency -
-000-mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fdata-sections -Wall -Wextra"
-000-
-000-Compiling standalone
-000-
-000/axisDMAPlatform_FreeRTOS55-1-1#pragma message: For the sleep routines, assembly instructions are used0-microblaze_sleep.c:55:9: note: #pragma message: For the sleep routines, assembly instructions are used
-000-   55 | #pragma message ("For the sleep routines, assembly instructions are used")
-000-      |         ^~~~~~~
-000-Compiling FreeRTOS
-000-
-000-Finished building libraries
-000-
-00255-
-18:31:53 Build Finished (took 12s.611ms)
-

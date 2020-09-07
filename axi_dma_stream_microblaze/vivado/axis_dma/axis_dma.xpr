@@ -165,6 +165,9 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_axi_gpio_0_0/axis_dma_design_axi_gpio_0_0.xci">
+          <Proxy FileSetName="axis_dma_design_axi_gpio_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_axi_dma_0_1/axis_dma_design_axi_dma_0_1.xci">
           <Proxy FileSetName="axis_dma_design_axi_dma_0_1"/>
         </CompFileExtendedInfo>
@@ -186,26 +189,23 @@
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_microblaze_0_axi_intc_0/axis_dma_design_microblaze_0_axi_intc_0.xci">
           <Proxy FileSetName="axis_dma_design_microblaze_0_axi_intc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_lmb_bram_0/axis_dma_design_lmb_bram_0.xci">
-          <Proxy FileSetName="axis_dma_design_lmb_bram_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_ilmb_bram_if_cntlr_0/axis_dma_design_ilmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="axis_dma_design_ilmb_bram_if_cntlr_0"/>
+        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_clk_wiz_0_0/axis_dma_design_clk_wiz_0_0.xci">
+          <Proxy FileSetName="axis_dma_design_clk_wiz_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_microblaze_0_0/axis_dma_design_microblaze_0_0.xci">
           <Proxy FileSetName="axis_dma_design_microblaze_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_clk_wiz_0_0/axis_dma_design_clk_wiz_0_0.xci">
-          <Proxy FileSetName="axis_dma_design_clk_wiz_0_0"/>
+        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_ilmb_bram_if_cntlr_0/axis_dma_design_ilmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="axis_dma_design_ilmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_lmb_bram_0/axis_dma_design_lmb_bram_0.xci">
+          <Proxy FileSetName="axis_dma_design_lmb_bram_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_uart_axis_0_0/axis_dma_design_uart_axis_0_0.xci">
           <Proxy FileSetName="axis_dma_design_uart_axis_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_axis_data_fifo_0_0/axis_dma_design_axis_data_fifo_0_0.xci">
           <Proxy FileSetName="axis_dma_design_axis_data_fifo_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_axi_gpio_0_0/axis_dma_design_axi_gpio_0_0.xci">
-          <Proxy FileSetName="axis_dma_design_axi_gpio_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="axis_dma_design.bd" FileRelPathName="ip/axis_dma_design_pwm_capture_0_0/axis_dma_design_pwm_capture_0_0.xci">
           <Proxy FileSetName="axis_dma_design_pwm_capture_0_0"/>
@@ -1004,9 +1004,7 @@
     </Run>
     <Run Id="axis_dma_design_axis_tx_esc_protocol_0_1_synth_1" Type="Ft3:Synth" SrcSet="axis_dma_design_axis_tx_esc_protocol_0_1" Part="xc7s25csga225-1" ConstrsSet="axis_dma_design_axis_tx_esc_protocol_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/axis_dma_design_axis_tx_esc_protocol_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1357,9 +1355,7 @@
     </Run>
     <Run Id="axis_dma_design_axis_tx_esc_protocol_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7s25csga225-1" ConstrsSet="axis_dma_design_axis_tx_esc_protocol_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="axis_dma_design_axis_tx_esc_protocol_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

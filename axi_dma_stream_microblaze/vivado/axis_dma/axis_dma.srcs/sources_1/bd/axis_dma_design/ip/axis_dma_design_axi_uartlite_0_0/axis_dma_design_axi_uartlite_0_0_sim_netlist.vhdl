@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
--- Date        : Wed Aug 12 22:47:51 2020
--- Host        : hp running 64-bit Ubuntu 20.04.1 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top axis_dma_design_axi_uartlite_0_0 -prefix
---               axis_dma_design_axi_uartlite_0_0_ axis_dma_design_axi_uartlite_0_0_sim_netlist.vhdl
+-- Date        : Wed Sep  2 10:24:35 2020
+-- Host        : VERITY-1171 running 64-bit Ubuntu 20.04.1 LTS
+-- Command     : write_vhdl -force -mode funcsim
+--               /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.srcs/sources_1/bd/axis_dma_design/ip/axis_dma_design_axi_uartlite_0_0/axis_dma_design_axi_uartlite_0_0_sim_netlist.vhdl
 -- Design      : axis_dma_design_axi_uartlite_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity axis_dma_design_axi_uartlite_0_0_baudrate is
     EN_16x_Baud_reg_0 : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_baudrate : entity is "baudrate";
 end axis_dma_design_axi_uartlite_0_0_baudrate;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_baudrate is
@@ -306,6 +308,8 @@ entity axis_dma_design_axi_uartlite_0_0_cdc_sync is
     rx : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_cdc_sync : entity is "cdc_sync";
 end axis_dma_design_axi_uartlite_0_0_cdc_sync;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_cdc_sync is
@@ -448,6 +452,8 @@ entity axis_dma_design_axi_uartlite_0_0_cntr_incr_decr_addn_f is
     tx_Start : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_cntr_incr_decr_addn_f : entity is "cntr_incr_decr_addn_f";
 end axis_dma_design_axi_uartlite_0_0_cntr_incr_decr_addn_f;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_cntr_incr_decr_addn_f is
@@ -872,6 +878,8 @@ entity axis_dma_design_axi_uartlite_0_0_dynshreg_f is
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_dynshreg_f : entity is "dynshreg_f";
 end axis_dma_design_axi_uartlite_0_0_dynshreg_f;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_dynshreg_f is
@@ -1243,6 +1251,8 @@ entity axis_dma_design_axi_uartlite_0_0_pselect_f is
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_pselect_f : entity is "pselect_f";
 end axis_dma_design_axi_uartlite_0_0_pselect_f;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_pselect_f is
@@ -1335,6 +1345,8 @@ entity axis_dma_design_axi_uartlite_0_0_address_decoder is
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_1\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_2\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_address_decoder : entity is "address_decoder";
 end axis_dma_design_axi_uartlite_0_0_address_decoder;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_address_decoder is
@@ -1851,6 +1863,8 @@ entity axis_dma_design_axi_uartlite_0_0_srl_fifo_rbu_f is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_srl_fifo_rbu_f : entity is "srl_fifo_rbu_f";
 end axis_dma_design_axi_uartlite_0_0_srl_fifo_rbu_f;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_srl_fifo_rbu_f is
@@ -2054,6 +2068,8 @@ entity axis_dma_design_axi_uartlite_0_0_slave_attachment is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_slave_attachment : entity is "slave_attachment";
 end axis_dma_design_axi_uartlite_0_0_slave_attachment;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_slave_attachment is
@@ -2471,6 +2487,8 @@ entity axis_dma_design_axi_uartlite_0_0_srl_fifo_f is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_srl_fifo_f : entity is "srl_fifo_f";
 end axis_dma_design_axi_uartlite_0_0_srl_fifo_f;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_srl_fifo_f is
@@ -2602,6 +2620,8 @@ entity axis_dma_design_axi_uartlite_0_0_axi_lite_ipif is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end axis_dma_design_axi_uartlite_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_axi_lite_ipif is
@@ -2678,6 +2698,8 @@ entity axis_dma_design_axi_uartlite_0_0_uartlite_rx is
     tx_Buffer_Empty_Pre : in STD_LOGIC;
     rx : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_uartlite_rx : entity is "uartlite_rx";
 end axis_dma_design_axi_uartlite_0_0_uartlite_rx;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_uartlite_rx is
@@ -3328,6 +3350,8 @@ entity axis_dma_design_axi_uartlite_0_0_uartlite_tx is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_uartlite_tx : entity is "uartlite_tx";
 end axis_dma_design_axi_uartlite_0_0_uartlite_tx;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_uartlite_tx is
@@ -3612,6 +3636,8 @@ entity axis_dma_design_axi_uartlite_0_0_uartlite_core is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_uartlite_core : entity is "uartlite_core";
 end axis_dma_design_axi_uartlite_0_0_uartlite_core;
 
 architecture STRUCTURE of axis_dma_design_axi_uartlite_0_0_uartlite_core is
@@ -3807,6 +3833,8 @@ entity axis_dma_design_axi_uartlite_0_0_axi_uartlite is
   attribute C_S_AXI_DATA_WIDTH of axis_dma_design_axi_uartlite_0_0_axi_uartlite : entity is 32;
   attribute C_USE_PARITY : integer;
   attribute C_USE_PARITY of axis_dma_design_axi_uartlite_0_0_axi_uartlite : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of axis_dma_design_axi_uartlite_0_0_axi_uartlite : entity is "axi_uartlite";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of axis_dma_design_axi_uartlite_0_0_axi_uartlite : entity is "yes";
 end axis_dma_design_axi_uartlite_0_0_axi_uartlite;

@@ -1,8 +1,8 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-// Date        : Thu Aug 27 23:53:05 2020
-// Host        : hp running 64-bit Ubuntu 20.04.1 LTS
+// Date        : Wed Sep  2 10:27:30 2020
+// Host        : VERITY-1171 running 64-bit Ubuntu 20.04.1 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /media/tcmichals/Working/xilinx/CMODS7-25/github/CMODS7/axi_dma_stream_microblaze/vivado/axis_dma/axis_dma.srcs/sources_1/bd/axis_dma_design/ip/axis_dma_design_axis_tx_protocol_crc_0_0/axis_dma_design_axis_tx_protocol_crc_0_0_sim_netlist.v
 // Design      : axis_dma_design_axis_tx_protocol_crc_0_0

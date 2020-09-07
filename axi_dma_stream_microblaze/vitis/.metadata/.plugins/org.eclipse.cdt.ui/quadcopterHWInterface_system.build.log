@@ -1,0 +1,6 @@
+08:54:57 **** Build of configuration Release for project quadcopterHWInterface_system ****
+make all 
+Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
+
+08:54:57 Build Finished (took 520ms)
+
